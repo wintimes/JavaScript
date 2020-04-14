@@ -31,3 +31,16 @@ var arr = ["1", "2", "3", "4"];
 var arr1 = [];
 // arr1.pop();// returns undefined
 // arr1; // returns []
+var carname ="shiyanlou";
+var carname = 'shiyanlou';
+var answer = "i love 'shiyanlou'";
+var answer = 'i love "shiyanlou"';
+// var x1 = 'i've got no right to take my place...';错误不可行。
+var x1 = "i have got no right to take my place...";
+var x1 = "I've got no right to take my place...";
+var y = "He is called \"Johnny\"";
+var x2 = "He is called \"Tom\"";
+// 链接字符串
+var one = "Hello,jack.";
+var two = "i'm rose";
+result = one + two;
