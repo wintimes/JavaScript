@@ -1,6 +1,17 @@
 //获取元素
 document.getElementById('btn');
 console.log(document.getElementById('btn'))
+
+
+
+
+
+
+
+
+
+
+
 /*
     document - file
     . - 的
