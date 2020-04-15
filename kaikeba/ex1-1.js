@@ -18,7 +18,9 @@ console.log(document.getElementById('btn'))
 document.querySelector('#btn')
 document.querySelector('.box')
 console.log(document.querySelector('#btn'))
-console.log(document.querySelector('.box'))
+// console.log(document.querySelector('.wrap').querySelector('.box'))
+console.log(document.querySelector('.wrap.box'))
+
 /*
 
         document.querySelector('选择器--')
