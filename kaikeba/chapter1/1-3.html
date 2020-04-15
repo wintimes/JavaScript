@@ -11,8 +11,22 @@
         <button id="btn">按钮</button>
         <script>
             window.onload = function(){
-                console.log(document.getElementById('btn'));
+               // console.log(document.getElementById('btn'));
+                console.log(document.querySeletor('#btn'));
             }
+            /*
+                null - 获取元素不存在
+
+                window.onload -等待窗口加载
+                function (){
+                    //放置窗口加载完成之后做的事情
+                }
+
+
+                不推荐这种的方法！！！！！！！
+                如果代码很庞大，会导致卡顿，速度很慢。选择另外一个方式。
+
+            */
         </script>
     </body>
 </html>
