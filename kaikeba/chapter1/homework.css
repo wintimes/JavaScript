@@ -1,0 +1,69 @@
+wrap {
+
+}
+mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: lightgrey;
+    display: none;
+}
+.select {
+    width: 400px;
+    height:260px;
+    background: #fff;
+    border: 20px solid #f999;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -130px;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 10%;
+}
+.setList li{
+    height: 30px;
+    font: 14px / 30px "宋体";
+    margin-top: 10px;
+}
+.setList span {
+    float: left;
+}
+.select span:not(.title){
+    width: 40px;
+    height: 30px;
+    border: 1px solid #000;
+    margin: 0 5px;
+    text-align: center;
+    background: #e7e2e286;
+    color:#333;
+}
+#red {
+    background: red;
+}
+#yellow {
+    background: yellow;
+}
+#blue {
+    background: skyblue;
+}
+.setList li:first-of-type span:not(title){
+    color: rgb(22, 20, 20);
+}
+.select button {
+    width: 80px;
+    height: 30px;
+    font: 14px / 30px "宋体";
+    color: #fff;
+    text-align: center;
+    background: black;
+    border: none;
+}
+.select button:first-of-type{
+    margin-left:28%;
+}

@@ -13,3 +13,10 @@ button {
     background-color: lightcoral;
     color: wheat;
 }
+link {
+    font-size: 30px;
+}
+img {
+    display: block;
+    width: 400px;
+}

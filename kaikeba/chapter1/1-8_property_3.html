@@ -8,12 +8,32 @@
     <body>
         <div id="box" class="active">这是文字</div>
         <input id="input1" type="text" value="请输入密码">
+        <p id="txt">
+            这是文字内容
+            <span></span>
+        </p>
         <script>
             var box = document.getElementById('box');
             var input1 = document.getElementById('input1');
+            var txt = document.getElementById('txt');
+
+
             // console.log(box.id)
             // console.log(box.class)
-            console.log(input1.value)
+            // console.log(input1.value);
+
+            console.log(txt.innerHTML)
+           /*
+            box.onclick = function(){
+                box.style.width = '300px';
+                box.style.height = '300px';
+                box.style.background = 'lightgreen';
+            }
+            */
+            box.onclick = function(){
+                box.style.cssText = 'width:300px;height:300px;background:lightgreen;'
+            }
+            txt.innerHTML = '123456';
         </script>
     </body>
 </html>

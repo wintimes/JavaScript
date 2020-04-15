@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="homework.css">
+    </head>
+    <body>
+        <div class="wrap">
+            <h2>请为下面的div设置样式：<button>点击设置</button></h2>
+            <div id="box">
+                
+            </div>
+        </div>
+        <div class="mask">
+            <div class="select">
+                <ul class="setList">
+                    <li>
+                        <span class="title">请选择背景色：</span>
+                        <span id="red">红</span>
+                        <span id="yellow">黄</span>
+                        <span id="blue">蓝</span>
+                    </li>
+                    <li>
+                        <span class="title">请选择width(px)：</span>
+                        <span id="w200">200</span>
+                        <span id="w300">300</span>
+                        <span id="w400">400</span>
+                    </li>
+                    <li>
+                        <span class="title">请选择height(px)：</span>
+                        <span id="h200">200</span>
+                        <span id="h300">300</span>
+                        <span id="h400">400</span>
+                    </li>
+                </ul>
+                <button id="reset">恢复</button>
+                <button id="sure">确定</button>
+            </div>
+        </div>
+
+        <script>
+
+
+            /*
+                功能分析：
+                    1：点击按钮，然后显示设置页面
+                        1- 获取按钮
+                        2- 绑定点击事件
+                        3- 显示设置页面
+                            display:none //隐藏
+                            display:block //显示
+
+
+
+
+            */
+            var btn = document.getElementById('btn');
+            var maskBox = document.getElementById('maskBox');
+            btn.onclick = function (){
+                //点击之后要做的事情
+                maskBox.style.display ='block';
+            }
+
+            /*
+                设置DIV
+                    1- 获取所有可以设置div的元素（背景色，宽，高）
+                    2- 对以上所有的元素绑定点击事件
+                    3- 对要设置的DIV更改其样式
+            */
+            var red = document.getElementById('red');
+            var yellow = document.getElementById('yellow');
+            var blue = document.getElementById('blue');
+
+            var w200 = document.getElementById('w200');
+            var w300 = document.getElementById('w300');
+            var w400 = document.getElementById('w400');
+
+            var h200 = document.getElementById('h200');
+            var h300 = document.getElementById('h300');
+            var h400 = document.getElementById('h400');
+
+            var box = document.getElementById('box');
+
+            red.onclick = function(){
+                box.style.background = 'red';
+
+            }
+            yellow.onclick = function(){
+                box.style.background = 'yellow';
+
+            }
+            blue.onclick = function(){
+                box.style.background = 'blue';
+
+            }
+            w200.onclick = function(){
+                box.style.width = 'w200';
+
+            }
+            w300.onclick = function(){
+                box.style.width = 'w300';
+
+            }
+            w400.onclick = function(){
+                box.style.width = 'w400';
+
+            }
+            h200.onclick = function(){
+                box.style.width = 'h200';
+
+            }
+            h300.onclick = function(){
+                box.style.width = 'h300';
+
+            }
+            h400.onclick = function(){
+                box.style.width = 'h400';
+
+            }
+            /*
+                确定
+                    1- 获取元素按钮
+                    2- 绑定点机事件
+                    3- 由于点击上述样式的时候已经给style设置了样式，
+                       所以这时候只需要display:none隐藏即可。
+
+            */
+            var sure = document.getElementById('sure');
+            sure.onclick = function(){
+                maskBox.style.display = 'none';
+            }
+            /*
+                恢复
+                    1- 获取元素按钮
+                    2- 绑定点击事件
+                    3- 把元素的所有可以设置的样式，都回到初始状态
+
+            */
+            var reset = document.getElementById('reset');
+            reset.onclick = function(){
+                /*
+                    width 100
+                    height 100
+                    bgc #fff
+                */
+                box.style.cssText = 'width:100px;height:100px;background:#fff;';
+                maskBox.style.display = 'none';// 直接回到初始状态。
+            }
+
+
+
+
+        </script>
+    </body>
+</html>
