@@ -7,12 +7,12 @@
     </head>
     <body>
         <div class="wrap">
-            <h2>请为下面的div设置样式：<button>点击设置</button></h2>
+            <h2>请为下面的div设置样式：<button id="btn">点击设置</button></h2>
             <div id="box">
                 
             </div>
         </div>
-        <div class="mask">
+        <div id="mask">
             <div class="select">
                 <ul class="setList">
                     <li>
@@ -55,12 +55,14 @@
 
 
             */
+            
             var btn = document.getElementById('btn');
-            var maskBox = document.getElementById('maskBox');
+            var mask = document.getElementById('mask');
             btn.onclick = function (){
                 //点击之后要做的事情
-                maskBox.style.display ='block';
+                mask.style.display ='block';
             }
+            
 
             /*
                 设置DIV
@@ -107,15 +109,15 @@
 
             }
             h200.onclick = function(){
-                box.style.width = 'h200';
+                box.style.height = 'h200';
 
             }
             h300.onclick = function(){
-                box.style.width = 'h300';
+                box.style.height = 'h300';
 
             }
             h400.onclick = function(){
-                box.style.width = 'h400';
+                box.style.height = 'h400';
 
             }
             /*
@@ -128,7 +130,7 @@
             */
             var sure = document.getElementById('sure');
             sure.onclick = function(){
-                maskBox.style.display = 'none';
+                mask.style.display = 'none';
             }
             /*
                 恢复
@@ -145,7 +147,7 @@
                     bgc #fff
                 */
                 box.style.cssText = 'width:100px;height:100px;background:#fff;';
-                maskBox.style.display = 'none';// 直接回到初始状态。
+                mask.style.display = 'none';// 直接回到初始状态。
             }
 
 
