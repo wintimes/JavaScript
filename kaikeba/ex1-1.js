@@ -18,3 +18,13 @@ console.log(document.getElementById('btn'))
 document.querySelector('#btn')
 document.querySelector('.box')
 console.log(document.querySelector('#btn'))
+console.log(document.querySelector('.box'))
+/*
+
+        document.querySelector('选择器--')
+        - 通过选择器进行选取
+        - 遇到第一个符合条件的元素，就返回第一个元素
+        - 如果获取一个不存在的元素，得到的结果会是null!!!
+        - document / 指定父级
+
+ */
