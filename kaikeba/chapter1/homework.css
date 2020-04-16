@@ -1,11 +1,25 @@
-#box{
+
+body{
+    background: rgb(233, 231, 231);
+}.wrap button {
+    width: 120px;
+    height: 40px;
+    font: bold 16px / 40px   "宋体";
+    text-align: center;
+    color: #fff;
+    background: red;
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 20px;
+
+}#box{
     width: 100px;
     height: 100px;
-    margin:0;
-    padding: 0;
-    border: 2px solid black;
+    background: #fff;
+    border: 4px solid black;
 }
-#mask {
+.mask {
     width: 100%;
     height: 100%;
     position: absolute;
