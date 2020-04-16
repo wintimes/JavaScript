@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title></title>
+        <!-- <link rel="stylesheet" type="text/css" href="if_2.css"> -->
+    </head>
+    <body>
+        <input id="score" type="text">
+        <button id= "btn">评级</button>
+        <script>
+            /*
+                <60   不及格
+                60~70 一般
+                70~80 良好
+                80~   优秀
+
+            */
+            var score = document.getElementById('score');
+            var btn = document.getElementById('btn');
+            btn.onclick = function(){
+            var scoreTxt = score.value;
+                if(scoreTxt >= 80){
+                    alert('优秀')
+                }else if(scoreTxt >= 70){
+                    alert('良好')
+                }else if(scoreTxt >= 60){
+                    alert('一般')
+                }else {
+                    alert('不及格')
+                }
+                //满足一次就不再进行判断
+            }
+        </script>
+    </body>
+</html>

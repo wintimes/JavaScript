@@ -9,7 +9,7 @@
     </head>
     <body>
         <button id="btn">按钮</button>
-        <div id="box" style="width:200px;height:200px;"></div>
+        <div id="box" style="width:200px;height:200px;background:red;"></div>
 
         <script>
             var box = document.getElementById('box');
@@ -17,8 +17,11 @@
             btn.onclick = function(){
                 if(box.style.width == '200px'){
                     alert('条件成立')
+                }else{
+                    alert('条件不成立')
                 }
             }
+
         </script>
     </body>
 </html>
