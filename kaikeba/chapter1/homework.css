@@ -70,8 +70,8 @@ ul{
 #blue {
     background: skyblue;
 }
-.setList li:first-of-type span:not(title){
-    color: rgb(22, 20, 20);
+.setList li:first-of-type span:not(.title){
+    color:white;
 }
 .select button {
     width: 80px;
