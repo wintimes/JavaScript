@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="if_2.css">
+    </head>
+    <body>
+        <button id="btn">按钮</button>
+        <div id="box"></div>
+
+        <script>
+            /*
+               小括号里面我们放判断条件
+            */
+            var box = document.getElementById('box');
+            var btn = document.getElementById('btn');
+           btn.onclick = function(){
+                if(box.style.width == '200px'){
+               //只有小括号里面的条件满足，那么这里的代码才会执行
+                alert('条件成立')
+           }
+
+           }
+
+
+
+           /*
+            < > >= <=
+
+            ==
+
+           */
+        </script>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+#box {
+    width: 200px;
+    height: 200px;
+    background: lightcoral;
+}
+button {
+    display: block;
+    width: 100px;
+    height: 30px;
+    border: 2px solid #fff;
+    background: #14afd0;
+    font-size:14px;
+    line-height: 30px;
+    font-family: "微软雅黑";
+    border-radius: 12px;
+    color: #fff;
+    margin-left: 430px;
+}
