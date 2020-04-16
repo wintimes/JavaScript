@@ -1,0 +1,21 @@
+.wrap {
+    width: 1000px;
+    height: 600px;
+    text-align: center;
+    background:skyblue;
+    margin: 100px auto;
+}
+#text {
+    width: 500px;
+    height: 200px;
+    margin: 50px auto;
+    border-radius: 10px;
+    border: 2px solid blueviolet;
+}
+#btn {
+      min-width: 60px;
+     padding: 5px 8px;
+     background: #fff;
+     color: #4daff9;
+     border: 1px solid #4daff9;
+}

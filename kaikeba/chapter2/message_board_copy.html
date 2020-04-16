@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="message_board.css">
+    </head>
+    <body>
+        <div class="wrap">
+            <textarea id="text"></textarea>
+            <buttton id="btn">提交</buttton>
+            <ul id="list">
+
+            </ul>
+        </div>
+        <script>
+            /*
+                1- 获取元素(输入框、提交按钮、list)
+                2- 按钮绑定点击事件
+                3- 获取输入框内容
+                4- 把输入内容放在list里面
+            */
+            var text = document.getElementById('text');
+            var btn = document.getElementById('btn');
+            var list = document.getElementById('list');
+
+            btn.onclick = function(){
+                //点击后要做的事情
+                console.log(text.value)
+            }
+        </script>
+    </body>
+</html>
