@@ -27,6 +27,9 @@
             btn.onclick = function(){
                 //点击后要做的事情
                 console.log(text.value)
+                var txt = text.value;
+                //innerHTML 会替换掉当前标签内的所有内容。
+                list.innerHTML =list.innerHTML + '<li>' + txt + '</li>';
             }
         </script>
     </body>
