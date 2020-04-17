@@ -84,6 +84,10 @@
           // num += 1;
           //每次为这个值增加1。
           num++;
+          if(num >= 5 ){
+              num = 0;
+          }
+          img.src = 'img/img' + (num + 1) +'.jpg'
 
           console.log(num);
        }
