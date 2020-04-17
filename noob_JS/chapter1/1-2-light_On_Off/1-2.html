@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<script>
+function myImage(){
+    element = document.getElementById('myimage');
+    if(element.src.match("bulon")){
+        element.src = './images/pic_buloff.gif';
+    }else{
+        element.src = './images/pic_bulon.gif';
+    }
+}
+</script>
+<img id="myimage" onclick="changeImage()" src="./images/pic_bulboff.gif" >
+<p>点击灯泡就可以打开或关闭这盏灯</p>
+
+</body>
+</html>
