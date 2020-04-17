@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>菜鸟教程(runoob.com)</title>
-</head>
-<body>
+    <head>
+        <meta charset="utf-8">
+        <title>菜鸟教程(runoob.com)</title>
+    </head>
+    <body>
+        <img id="myimage" onclick="changeImage()" src="./images/pic_bulboff.gif" >
+        <p>点击灯泡就可以打开或关闭这盏灯</p>
+            <script>
+            var onOff = true;
+            function changeImage(){
 
-
-<img id="myimage" onclick="changeImage()" src="./images/pic_bulboff.gif" >
-<p>点击灯泡就可以打开或关闭这盏灯</p>
-<script>
- var onOff = true;
-function changeImage(){
-
-    if(onOff==true){
-        myimage.src ="./images/pic_bulbon.gif"
-        onOff = false;
-    }else{
-        myimage.src ="./images/pic_bulboff.gif"
-        onOff = true;
-    }
-}
-</script>
-</body>
+                if(onOff==true){
+                    myimage.src ="./images/pic_bulbon.gif"
+                    onOff = false;
+                }else{
+                    myimage.src ="./images/pic_bulboff.gif"
+                    onOff = true;
+                }
+            }
+            </script>
+    </body>
 </html>

@@ -1,0 +1,9 @@
+button{
+    width: 80px;
+    height: 30px;
+    font: 14px / 30px "宋体";
+    color: #fff;
+    text-align: center;
+    background: rgb(63, 47, 153);
+    border: none;
+        }
