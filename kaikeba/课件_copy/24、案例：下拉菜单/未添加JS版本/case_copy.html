@@ -111,16 +111,18 @@
                     利用布尔值来进行代替。
             4- 根据结果修改list样式。
         */
-        var title = document.querySeletor('.title');
-        var list = document.querySeletor('.list');
+        var title = document.querySelector('.title');
+        var list = document.querySelector('.list');
 
         var onOff = true;
 
         title.onclick = function(){
             if(onOff){
                 list.style.display = 'block';
+                onOff = false
             }else{
-
+                list.style.display = 'none';
+                onOff = true;
             }
 
         }
