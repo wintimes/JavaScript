@@ -3,12 +3,12 @@
     <head>
         <meta charset="utf-8"/>
         <title></title>
-        <link href="case.css">
+        <link rel="stylesheet" href="case.css">
 
     </head>
     <body>
-        <h1>基本类型的变量是存放再栈内存(Stack)里面的</h1>
-        <h5>    var a,b;<br>
+        <h1 class="center">基本类型的变量是存放再栈内存(Stack)里面的</h1>
+        <div class="box1">    var a,b;<br>
                 a = "zyj";<br>
                 b = a;<br>
                 console.log(a);   // zyj<br>
@@ -16,7 +16,23 @@
                 a = "呵呵";       // 改变 a 的值，并不影响 b 的值<br>
                 console.log(a);   // 呵呵<br>
                 console.log(b);   // zyj<br>
-        </h5>
+        </div>
+        <img src="img1.png"  />
+        <h1 class="center">引用类型的值是保存在堆内存（Heap）中的对象（Object）</h1>
+        <div class="box1">
+            var a = {name:"percy"};<br>
+            var b;  <br >
+            b = a;<br>
+            a.name = "zyj";<br>
+            console.log(b.name);    // zyj<br>
+            b.age = 22;<br>
+            console.log(a.age);     // 22<br>
+            var c = {<br>
+            name: "zyj",<br>
+            age: 22<br>
+            };<br>
+        </div>
+        <img src="img2.png"  />
         <script src="case.js"></script>
     </body>
 </html>
