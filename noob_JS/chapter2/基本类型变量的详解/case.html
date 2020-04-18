@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title></title>
+        <link href="case.css">
+
+    </head>
+    <body>
+        <h1>基本类型的变量是存放再栈内存(Stack)里面的</h1>
+        <h5>    var a,b;<br>
+                a = "zyj";<br>
+                b = a;<br>
+                console.log(a);   // zyj<br>
+                console.log(b);   // zyj<br>
+                a = "呵呵";       // 改变 a 的值，并不影响 b 的值<br>
+                console.log(a);   // 呵呵<br>
+                console.log(b);   // zyj<br>
+        </h5>
+        <script src="case.js"></script>
+    </body>
+</html>
