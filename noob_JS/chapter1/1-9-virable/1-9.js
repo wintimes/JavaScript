@@ -10,9 +10,13 @@ function myFunction1(){
     cars[1] = 'Benz';
     cars[2] = 'Volvo';
     for (i = 0; i < cars.length; i++){
-        // document.write(cars[i] + "<br>");
-        // document.getElementById('demo1').innerHTML = cars[i];
-        var x = document.getElementById('demo1');
-        x.innerHTML = cars[i];
+        document.write(cars[i] + "<br>");
+        /*
+        存疑
+        
+         */
+        // // document.getElementById('demo1').innerHTML = cars[i]; /
+        // var x = document.getElementById('demo1');
+        // x.innerHTML = cars[i];
     }
 }
