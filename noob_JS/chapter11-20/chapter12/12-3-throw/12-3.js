@@ -12,7 +12,4 @@ function myFunction(){
     }catch(err) {
         message.innerHTML = "错误： " + err + ".";
     }
-    finally {
-        document.getElementById("demo").value = "";
-    }
 }
