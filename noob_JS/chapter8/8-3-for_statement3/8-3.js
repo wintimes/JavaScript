@@ -1,8 +1,10 @@
 function myFunction(){
     car = ['BMW','VOLVO','SAAB','BENZ'];
     var x = "";
-    for (var i= 0, l = car.length; i < l ; i++ ){
-        x = x+ car[i] + " <br>"
+    var i= 2, l = car.length;
+    for (; i < l ;){
+        x = x+ car[i] + " <br>";
+        i++;
     }
 
     document.getElementById('demo2').innerHTML = x ;

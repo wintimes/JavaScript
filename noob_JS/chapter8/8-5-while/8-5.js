@@ -1,8 +1,8 @@
 function myFunction(){
-    car = ['BMW','VOLVO','SAAB','BENZ'];
-    var x = "";
-    for (var i= 0, l = car.length; i < l ; i++ ){
-        x = x+ car[i] + " <br>"
+    var x = "",i = 0;
+    while( i < 5){
+        x = x + "this integer is " + i + '<br>';
+        i++;
     }
 
     document.getElementById('demo2').innerHTML = x ;
@@ -10,4 +10,4 @@ function myFunction(){
 
 function displayDate(){
     document.getElementById('demo').innerHTML = Date();
-}XMLDocument
+}

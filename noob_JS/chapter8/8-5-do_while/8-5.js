@@ -1,9 +1,9 @@
 function myFunction(){
-    car = ['BMW','VOLVO','SAAB','BENZ'];
-    var x = "";
-    for (var i= 0, l = car.length; i < l ; i++ ){
-        x = x+ car[i] + " <br>"
-    }
+    var x = "",i = 0;
+    do{
+        x = x + "this number is " + i + "<br>";
+        i++;
+    }while(i < 5)
 
     document.getElementById('demo2').innerHTML = x ;
 }
