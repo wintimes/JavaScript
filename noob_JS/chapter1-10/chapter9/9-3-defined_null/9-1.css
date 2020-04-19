@@ -1,0 +1,3 @@
+function dispalyDate(){
+    document.getElementById('demo2').innerHTML = Date();
+}
