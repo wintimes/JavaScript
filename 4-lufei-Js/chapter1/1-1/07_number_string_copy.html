@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>数字和字符串的转换</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+           // 隐式转换，数字转字符串
+           var num = 10;
+           var myStr = num + "";
+           //alert(myStr);
+           alert(typeof myStr);
+           // 方法：字符串转数字
+           var myNum = Number(myStr);
+           alert(typeof myNum);
+           // 方法：数字转换字符串
+           var myStr2 = num.toString();  
+           alert(typeof myStr2);
+           // NaN 
+           var n = 'jfkdjskl1';
+           var a = Number(n);
+           alert(a);       //NaN Not a Number.
+        </script>
+    </body>
+</html>
