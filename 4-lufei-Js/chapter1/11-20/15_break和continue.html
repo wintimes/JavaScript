@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>break和continue</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+           var x = 0;
+           for(;;){//死循环
+               if(x > 100){
+                   break;
+               }
+               x++;
+           }
+           var sum = 0;
+           for (var i = 1;i <=10; i++){
+               if(i === 8){
+                   continue;//跳出当前循环，下次循环继续进行。
+               }
+               sum = sum + i;
+           }
+        </script>
+    </body>
+</html>

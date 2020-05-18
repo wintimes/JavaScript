@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>switch</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var weather = 'sunny';
+            switch(weather){
+                case 'sunny':
+                    alert(1);
+                    break;
+                case 'rainy':
+                    alert(2);
+                    break; //编写switch语句要小心break，cash穿透
+                case 'snowing':
+                    alert(3);
+                    break;
+                default:
+                    alert(4);
+                    break;
+            }  
+                     
+        </script>
+    </body>
+</html>

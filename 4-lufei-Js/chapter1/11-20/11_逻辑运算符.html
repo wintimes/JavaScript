@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>逻辑运算符</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            
+            var weather = 'sunny';
+            var temp = 32;
+            /*
+            if (weather === sunny ){
+
+                if (temp > 30){
+                    console.log('在家里吹空调');
+                }else{
+                    console.log('天气非常好');
+                }
+            }
+            // && || !true
+            */
+            if(weather === 'sunny' && temp > 30){
+                console.log('在家里吹空调');
+            }else if(weather === 'sunny' && temp <= 30) {
+                console.log('天气非常好');
+            }
+            //数学或者英语分别考过80或者85分才可以去玩游戏
+            var mathScore = 77;
+            var englishScore = 90;
+
+            if (mathScore > 80|| englishScore >85){
+                console.log('可以去玩游戏了');
+            }else{
+                console.log('滚去学习');
+            }
+            //!的使用
+            var isLogin = false;
+            console.log(!isLogin);
+            if(!isLogin){
+                console.log('用户已经登陆');
+            }
+        </script>
+    </body>
+</html>
