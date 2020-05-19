@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>字符串的字符方法</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //属性
+                //length
+            //方法
+                /*
+
+                charAt()
+                charCodeAt()
+
+                concat()//合并，通常使用的是 + 
+
+                slice()
+                substr()
+                substring()
+
+                indexOf()
+                lastIndexOf()
+
+                trim()
+
+                //常用的方法
+                toLowerCase()//全部转换为小写
+                toUpperCase()//大写
+                    //不常用
+                toLocaleLowerCase()//去非国际上的地域使用的方法
+                toLocalUpperCase()
+                
+                */
+                var str = 'hello world';
+                console.log(str.charAt(1));//e 获取字符串对应位置的字符
+                console.log(str.charCodeAt(1)); // 101 获取字符串对应位置的字符的编码
+                console.log(str.concat(' hlt')); //将字符串拼接， 通常情况下不使用，主要通过 +
+                //切片
+                console.log(str.slice(1,2));//骨头不顾尾  e
+                console.log(str.substring(2));
+                console.log(str.substr(1));
+                //查找位置
+                console.log(str.indexOf('o')); //从0开始计数, 4
+                console.log(str.lastIndexOf('o'));//从11开始计数,往前数, 7
+                console.log(str.indexOf('o',6));//从6 开始查找，从0 开始计数，7
+                console.log(str.lastIndexOf('o',6))//从6开始查找，往前数，4
+                //总结：查找位置不管使用什么样的方法，固定位置对应的字符的位置序数不变。
+                //清除字符串前后的空格
+                var str1 = '     hello world         ';
+                console.log(str1.trim());//hello world
+                console.log(str1); //      hello world         
+
+                var str2 = 'hello hlt';
+                console.log(str2.toUpperCase());//全部转换为大写。
+
+
+        </script>
+    </body>
+</html>
