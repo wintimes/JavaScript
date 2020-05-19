@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>函数返回值和函数表达式</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //声明函数
+            function addition(a, b){
+                var sum = a + b;
+                return sum;
+            }
+            function subtraction(a, b){
+                var sub = a - b;
+                return sub;
+            }
+            function multiplication(a, b){
+                var mul = a * b;
+                return mul;
+            }
+            // function division(a, b){
+            //     return a / b;
+            // }
+
+            //匿名函数
+            var division = function(a,b){
+                return a / b;
+            }
+            console.log(division);
+            console.log(typeof division);
+            var r = addition(3, 2);
+            var r2 = subtraction(3, 2);
+            var r3 = multiplication(3, 2);
+            var r4 = division(3, 2);
+
+            console.log(r);
+            console.log(r2);
+            console.log(r3);
+            console.log(r4);
+        </script>
+    </body>
+</html>

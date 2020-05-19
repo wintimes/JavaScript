@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>数组的操作方法</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //操作方法 concat() slice() splice()
+            //1.concat()合并
+            var colors = ['red','blue'];
+            var name = ['lisi','zhangsan','999'];
+            var newColors = colors.concat('yellow');
+            console.log(newColors);
+            newColors1 = newColors.concat({name:'lisi'},'green');
+            console.log(newColors1);
+            newColors2 = newColors.concat(name);
+            console.log(newColors2);
+            //2.slice()分割将当前中的数组的一个或多个创建成一个新的数组。
+            newColors2 = newColors2.slice(1);
+            console.log(newColors2);
+            //3.splice()删除 插入 替换 
+            //3.1--删除
+            var names = ['zhangsna','lisi','hlt','zxh'];
+            //names.splice(start:int,deleteCount：int, items...:any);
+            /*
+            names.splice(0,2);
+            console.log(names);
+            */
+            //3.2--插入
+            /*
+            names.splice(1,0,'noob','lufei');
+            console.log(names);
+            */
+            //3.3--替换
+            names.splice(1,1,'xiongda');
+            console.log(names);
+        </script>
+    </body>
+</html>

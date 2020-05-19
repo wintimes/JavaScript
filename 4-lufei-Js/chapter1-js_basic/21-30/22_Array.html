@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>javascript中常用的内置对象</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var arr = [1, 2, 3];
+            /*
+                两种方式去创建数组
+                    1- 字面量创建
+                        var arr = [1, 2, 3];
+                    2- 构造函数法
+                        var arr = new Array();
+                        等价于
+                        var arr = [];
+            */
+            var colors = new Array();
+            var colors2 = [];
+
+            colors[0] = 'red';
+            //判断是否为数组，并对数组进行操作。
+            if (Array.isArray(colors)){
+                //对数组进行操作
+                console.log(colors);
+                console.log(colors[0]);
+                console.log(colors.length);
+            }else{
+
+            }
+
+            //数组转换为字符串
+            var a = colors.toString();
+            alert(a);
+        </script>
+    </body>
+</html>

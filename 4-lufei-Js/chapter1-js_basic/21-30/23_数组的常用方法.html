@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>数组的常用方法</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+        /*
+           var arr = [1, 2, 3];
+           var a = arr.toString();
+           var b = arr.toLocaleString();
+           alert(typeof b);
+           alert(typeof a);
+        */
+        //区分 toString() 和toLocaleString()
+        var person1 = {
+            toString : function(){
+                return 'hlt';
+            },
+            toLocaleString : function(){
+                return 'zxh';
+            }
+        }
+
+        var person2 = {
+            toString : function(){
+                return '666';
+            },
+            toLocaleString : function(){
+                return '777';
+            }
+        }
+        var people = [person1, person2];
+        console.log(people);
+        console.log(people.toString());
+        console.log(people.toLocaleString());
+        //join() 分割字符串
+        var colors = ['red', 'blue', 'yellow'];
+        var a = colors.join('|');
+        console.log(a);
+        // 栈 方法
+        //（lifo  last-in-first-out）
+        // push()向数组的最后一项添加内容
+        var newlength = colors.push('purple');
+        console.log(newlength);
+        console.log(colors);
+        //pop()从数组末尾删除最后一项
+        var lastItem = colors.pop();
+        console.log(lastItem);
+        console.log(colors);
+        //队列 方法 
+        //fifo first in first out 
+        //shift() 
+        var firstItem = colors.shift();
+        var newlength = colors.unshift('yellow');
+        console.log(newlength);
+        console.log(firstItem);
+        //数组排序
+        //reverse() 倒序。
+        var values = [0, 3, 2, 5, 17, 10, 8];
+        values.reverse();
+        console.log(values);
+        //升序
+        function compare1(a,b){
+            
+            /*
+            if(a < b){
+                return -1;
+            }else if (a > b){
+                return 1;
+            }else{
+                return 0;
+            }
+            */
+            return a - b;
+        }
+        values.sort(compare1);
+        console.log(values)
+        //降序
+        function compare2(a,b){
+            /*
+            if(a < b){
+                return 1;
+            }else if (a > b){
+                return -1;
+            }else{
+                return 0;
+            }
+            */
+            return b - a;
+        }
+        values.sort(compare2);
+        console.log(values);
+        
+        </script>
+    </body>
+</html>
