@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>map方法的应用</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var oldArray = [
+                {
+                    name: '张三',
+                    age: 17
+                },
+                {
+                    name: '李四',
+                    age: 19
+                },
+                {
+                    name: '赵五',
+                    age: 27
+                },
+                {
+                    name: '王六',
+                    age: 22
+                }
+            ];
+            //不使用map(),forEach()的方法。
+            /*
+            var newNames = [];
+            var newAges = [];
+            for(var i = 0; i < oldArray.length; i++){
+                var myNames = oldArray[i].name;
+                var myAges = oldArray[i].age;
+                newNames.push(myNames);
+                newAges.push(myAges);
+            }
+            console.log('newNames: ' + newNames);
+            console.log('newAges: ' + newAges);
+            console.log(newNames);
+            console.log(newAges);
+            */
+            //使用map的方法进行编写
+            var newNames = oldArray.map(function(item,index){
+                return item.name;
+            });
+            var newAges = oldArray.map(function(item,index){
+                return item.age;
+            });
+            console.log(newNames);
+            console.log(newAges);
+        </script>
+    </body>
+</html>
