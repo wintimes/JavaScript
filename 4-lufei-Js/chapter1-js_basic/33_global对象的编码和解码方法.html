@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>global对象的编码和解码方法</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //最为重要的对象
+            //uri 通用资源标识符
+            var uri = 'http://www.apeland.cn/web index.html';
+            //编码只编码空格
+            console.log(encodeURI(uri));
+            //编码使用最多的方法
+            console.log(encodeURIComponent(uri));
+            
+            var encodeuri = 'http%3A%2F%2Fwww.apeland.cn%2Fweb%20index.html';
+            console.log(decodeURI(encodeuri));
+            //解码使用最多的方法
+            console.log(decodeURIComponent(encodeuri));
+
+        </script>
+    </body>
+</html>

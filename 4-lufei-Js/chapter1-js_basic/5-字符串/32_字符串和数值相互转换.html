@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>字符串与数值相互转换</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var str = '132323.2321';
+            var str1 = '1323dsda23.2321';
+            //字符串转换 数值类型
+            console.log(parseInt(str));
+            console.log(parseFloat(str));
+            console.log(Number(str1));//NaN 
+            var a = Number(str1);
+            console.log(isNaN(a));//true;
+            //数值转换字符串 
+            var num = 1233.2222;
+            //强制转换
+            console.log(num.toString());
+            console.log(String(num));
+            //隐式转换
+            console.log('' + num);
+            console.log('' + concat(num));
+
+            console.log(num.toFixed(2));//其中2 表示保留小数后两位。
+            
+
+
+        </script>
+    </body>
+</html>

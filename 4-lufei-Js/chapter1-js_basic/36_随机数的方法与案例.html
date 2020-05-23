@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>random的方法和案例</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+           //random（）
+           console.log(Math.random());
+           
+
+           //获取min到max之间的整数 (1-100)
+           /*
+            var max = 100;
+            var min = 1;
+            var random = Math.floor((Math.random() * (max - min) + 1));
+            console.log(random);
+            */
+            function random(min,max){
+                return Math.floor((Math.random() * (max - min) + 1));
+            }
+           //获取随机颜色
+           function randomColor(){
+               
+                //    var result = 
+                var r = random(0,256), g = random(0,256), b = random(0,256);
+                //模板字符串 ``反引号
+                var result = `rgb(${r},${g},${b})`;
+                console.log(result);
+                return result;
+
+           }
+            var rc = randomColor();
+            console.log();
+            document.body.style.background = rc;
+
+           //随机验证码 4位 字母（大写） + 数字
+           function creatCode(){
+               //设置字符串
+                var code ='';
+               //设置字符串长度
+                var codeLength = 4;
+               //设置随机数 的数组
+                var randomCode = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H',
+                'I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+                for (var i = 1;i<=codeLength;i++){
+                    //设置随机数范围
+                    var index = random(0,36);
+                    code += randomCode[index];
+                }
+                return code;
+           }
+           var rndCode = creatCode();
+           console.log(rndCode);
+           document.write(`<h1>${rndCode}</h1>`);
+       </script>
+    </body>
+</html>

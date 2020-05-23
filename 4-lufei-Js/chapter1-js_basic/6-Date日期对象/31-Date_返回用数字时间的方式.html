@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>返回用数字时间格式</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //6:30:00 P.M.  //第一位 不显示24小时制，让其从18点转换为6点 P.M.;
+            //6:03:10 P.M.  //第二位 不显示单个数字，让其可以从3加上前面的数字0；
+            //6:30:05 P.M.  //第三位 不显示单个数字，让其可以从3加上前面的数字0；
+            //6:30:05 A.M.  //第三位 不显示24小时制，让其从6点就是显示6 A.M.;
+            var now = new Date();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+
+            //三元运算符
+            //小时
+            function nowNumTime(){
+                var nowHour = '' + (hour > 12 ? hour - 12 : hour);
+                if (hour === 0 ){
+                    nowHour = '12';
+                }
+                var nowMinutes = '' + (minute < 10 ?':0':':') + minute;
+                var nowSeconds = '' + (second < 10 ?':0':':') + second;
+                var nowPA = '' + (hour > 12 ? ' P.M.': ' A.M.');
+                var nowTimes = nowHour + nowMinutes + nowSeconds + nowPA;
+                return nowTimes;
+            }
+            var a = nowNumTime();
+            console.log(a);
+
+
+        </script>
+    </body>
+</html>
