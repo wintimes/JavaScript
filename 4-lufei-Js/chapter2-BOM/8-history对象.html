@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>history对象</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+        var count = 0;
+           setTimeout(function(){
+                count++;
+                console.log(count);
+                history.go(0)//刷新   1前进 -1后退 2前进两次 -2后退两次
+           },2000)
+       </script>
+    </body>
+</html>
