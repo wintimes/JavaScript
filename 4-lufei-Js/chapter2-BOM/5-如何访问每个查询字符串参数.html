@@ -23,7 +23,7 @@
                 }
             */    
             //1.取得查询的字符串
-            var qs = location.search.length > 0 ? location.search.sbustring : '';//去掉问号。user=1212&pwd=3232 
+            var qs = location.search.length > 0 ? location.search.substring(1) : '';//去掉问号。user=1212&pwd=3232 
             //2.取到的每一项放置在数组中
             var items = qs.length ? qs.split('&') : []; 
             console.log(items);
