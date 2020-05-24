@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>定时器的方法</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // window对象中常用的两个方法
+            //setInterval | setTimeout
+            //延迟操作
+            window.setTimeout(function(){
+                console.log('hlt');
+            },0);
+            console.log('xiongda');
+            //循环操作
+            var num = 0;
+            var timer = null;
+            setInterval(function(){
+                num++;
+                if(num > 5){
+                    clearInterval(timer);
+                    return;
+                }
+                console.log('num:'+ num);
+            },1000);
+       </script>
+    </body>
+</html>
