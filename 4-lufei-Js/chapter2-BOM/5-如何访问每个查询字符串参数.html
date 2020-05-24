@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>如何访问每个查询字符串参数</title>
+    </head>
+    <body>
+        <form>
+            <input type='text' name='user'>
+            <input type='password' name='pwd'>
+            <input type='submit'>
+        </form>
+        <script type="text/javascript">
+            /*  https://4cac3e5670af.simplelab.cn/mini-browser/home/project/JavaScript/4-lufei-Js/chapter2-BOM/4-Locatio
+                n%E7%9A%84%E7%94%A8%E6%B3%95.html?user=1212&pwd=3232 
+            */
+            //?user=1212&pwd=3232
+            //如何才能将上述字符串变成这样的模式
+            /*
+                var args = {
+                    user : '1212',
+                    pwd : '3232'
+                }
+            */    
+            //1.取得查询的字符串
+            var qs = location.search.length > 0 ? location.search.sbustring : '';//去掉问号。user=1212&pwd=3232 
+            //2.取到的每一项放置在数组中
+            var items = qs.length ? qs.split('&') : []; 
+            console.log(items);
+            var item = null,name = null, value = null, args={};
+            for (var i=0; i<items.length;i++){
+                item = items[i].split('=');
+                name = items[0];
+                value = items[1];
+                if(name.length){
+                    args[name] = value;
+                }
+            }
+                console.log(args);
+
+       </script>
+    </body>
+</html>
