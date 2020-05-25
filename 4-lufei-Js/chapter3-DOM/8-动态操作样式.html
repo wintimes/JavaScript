@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>动态操作样式</title>
+        <style type="text/css">
+            .highLight{
+                background-color : lightcoral;
+                color :lightgray;
+                width: 250px;
+                height: 250px;
+                line-height: 250px;
+                font-size: 30px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="box" class="highLight">hlt</p>
+        <script type="text/javascript">
+            var oP = document.getElementById('box');
+            /*
+            1.直接操作样式属性(优先级最高)
+            oP.style.backgroundColor = 'lightcoral';
+            oP.style.color = 'white';
+            oP.style.width = '250px';
+            oP.style.height = '250px';
+            oP.style.lineHeight = '250px';
+            oP.style.fontSize = '30px';
+            oP.style.textAlign = 'center';
+            */
+
+            //2.通过控制属性的类名，来控制样式（最多）
+            oP.setAttribute('class','highLight');
+
+       </script>
+    </body>
+</html>

@@ -54,17 +54,21 @@
             var oActive = document.getElementById('active');
             var newNode = document.createElement('p'); //存储在内存中
             var newNode2 = document.createElement('p');
+            var newNode3 = document.createElement('a');
 
             console.log(newNode === newNode2);
 
             newNode.innerHTML = '<a href>zxh960831@163.com</a>';
             newNode2.innerHTML = '<a href>zxh960831@163.com</a>';
+            newNode3.setAttribute('href','https://www.baidu.com');
+
+            newNode3.innerHTML = '百度一下';
 
             newNode.setAttribute('class','active');
             oDiv.appendChild(newNode);
             //第一个参数是新插入的节点，第二个参数是参考节点
             oDiv.insertBefore(newNode2,oActive);
-            // oDiv.removeChild(oActive);
+            oDiv.replaceChild(newNode3,oActive);
 
             // newNode = null //释放内存
 
