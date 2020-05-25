@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>获取元素节点的方式</title>
+    </head>
+    <body>
+        <h2>你要购买什么样的课程</h2>
+        <p title="请您选择要购买的课程"> 本课程是web全栈课程，期待你的购买 </p>
+        <ul id="classlist">
+            <li class="item">JavaScript</li>
+            <li class="item">Css</li>
+            <li>DOM</li>
+        </ul>        
+        <script type="text/javascript">
+            //1.document.getElementById() 单个对象by id
+            var eleNode = document.getElementById('classlist');
+            console.log(eleNode);
+            console.log(typeof eleNode);
+            //2.document.getElementsByTagName() 一个对象节点的集合 有点像 数组
+            //如 li p class中的item
+            var olis = document.getElementsByTagName('li');
+            var oTitle = document.getElementsByTagName('h2');
+            console.log(oTitle);
+            for (var i = 0;i <olis.length;i++){
+                console.log(olis[i]);
+            }
+            console.log(olis);
+            //3.document.getElementsByClassName()
+            var oItems = document.getElementsByClassName('item');
+            console.log(oItems);
+
+
+       </script>
+    </body>
+</html>

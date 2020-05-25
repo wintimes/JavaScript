@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>节点属性</title>
+        <style type='text/css'>
+            #box{
+                color:red;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <!--    
+            在文档对象模型中，每一个节点都是一个对象。DOM节点有3个重要属性：
+                1.nodeName:节点的名称
+                    div p ul li 获取出来的都是大写
+                2.nodeValue:节点的值
+                3.nodeType:节点的类型
+            1.nodeName 属性：节点的名称，只读
+                1-元素节点的nodeName与标签名相同
+                2-属性节点的nodeName与属性的名称相同
+                3-文本节点的nodeName永远是#text
+                4-文档节点的nodeName永远是#document
+            2.nodeValue 属性：节点的值
+                1-元素节点的nodeValue是undefined或者null
+                2-属性节点的nodeValue是属性的值
+                3-文本节点的nodeValue是文本的值
+            3.typeNode属性：节点的类型，只读
+
+                以下常用的几种节点类型
+                元素类型       节点类型
+                  元素            1
+                  属性            2
+                  文本            3  
+                  注释            8
+                  文档            9
+          -->
+        <div id="box" title="我是文本">我是一个文本节点<!--我是一个注释  --></div>
+             
+        <script type="text/javascript">
+            //元素节点
+            var oDiv = document.getElementById('box');
+            console.log(oDiv.nodeName +"|"+ oDiv.nodeValue +"|"+ oDiv.nodeType);
+            //属性节点
+            var attrNode = oDiv.attributes[0];
+            console.log(attrNode.nodeName +"|"+ attrNode.nodeValue +"|"+ attrNode.nodeType);
+            //获取文本节点
+            var textNode = oDiv.childNodes[0];
+            console.log(textNode.nodeName +"|"+ textNode.nodeValue +"|"+ textNode.nodeType);
+            //获取注释节点
+            var commentNode = oDiv.childNodes[1];
+            console.log(commentNode.nodeName +"|"+ commentNode.nodeValue +"|"+ commentNode.nodeType);
+            //文档节点的类型
+            console.log(document.nodeType);
+       </script>
+    </body>
+</html>
