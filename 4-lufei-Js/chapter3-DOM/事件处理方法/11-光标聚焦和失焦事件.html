@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>光标聚焦和失焦事件</title>
+        <style type="text/css">
+            #box{
+                width:200px;
+                height:200px;
+                background-color:red;            
+            }
+            .text{
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="">
+            <p class="name">
+                <label for="username">用户名：</label>
+                <input type="text" name="user" id="username">
+            </p>
+            <p class="pwd">
+                <label for="pwd">密码：</label>
+                <input type="password" name="pwd" id="pwd">
+            </p>
+            <input type="submit" name="">
+        </form>
+        <script type="text/javascript">
+            var userName = document.getElementById('username');
+            var newNode = document.createElement('span');
+            //聚焦
+            userName.onfocus = function(){
+                newNode.innerHTML = '请输入用户名'//2
+                newNode.setAttribute('class','text');
+                userName.parentNode.appendChild(newNode); //1
+            }
+            //失焦事件
+            userName.onblur = function(){
+                newNode.innerHTML = '请输入正确的用户名'//2
+                newNode.setAttribute('class','text');
+                userName.parentNode.appendChild(newNode); //1
+            }
+       </script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>窗口加载事件</title>
+        <style type="text/css"></style>
+        <script type="text/javascript">
+        //等待文档加载完成才会调用onload()事件
+            window.onload = function(){
+                var oDiv = document.getElementById('box');
+                oDiv.onclick = function(){
+                    this.innerHTML = 'alex';
+                }
+                //会被覆盖，事件覆盖
+            }
+        </script>
+    </head>
+    <body>
+        <div id="box">hlt</div>
+        
+    </body>
+</html>
