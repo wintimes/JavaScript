@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>图片切换</title>
+        <style type="text/css">
+           *{
+               padding:0;
+               margin:0;
+           }
+           #box {
+               border: 1px solid #ccc;
+               width:450px;
+               height: 70px;
+               padding-top: 450px;
+               background:url('./images/1.png') no-repeat;
+           }
+           #box ul li {
+               display:inline-block;
+               margin-right:15px;
+           }
+           #box ul li img {
+               width:64px;
+           }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <ul>
+                <li id="item1">
+                    <img src="./images/iPhone1.jpg">
+                </li>
+                <li id="item2">
+                    <img src="./images/iPhone2.jpg">
+                </li>
+                <li id="item3">
+                    <img src="./images/iPhone3.jpg">
+                </li>
+                <li id="item4">
+                    <img src="./images/iPhone4.jpg">
+                </li>
+                <li id="item5">
+                    <img src="./images/iPhone5.jpg">
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            var item1 = document.getElementById('item1');
+            var item2 = document.getElementById('item2');
+            var item3 = document.getElementById('item3');
+            var item4 = document.getElementById('item4');
+            var item5 = document.getElementById('item5');
+
+            var oBox = document.getElementById('box');
+
+            item1.onmouseover = function(){
+                oBox.style.background = `url('./images/1.png') no-repeat`;
+            }
+            item2.onmouseover = function(){
+                oBox.style.background = `url('./images/2.png') no-repeat`;
+            }
+            item3.onmouseover = function(){
+                oBox.style.background = `url('./images/3.png') no-repeat`;
+            }
+            item4.onmouseover = function(){
+                oBox.style.background = `url('./images/4.png') no-repeat`;
+            }
+            
+            item5.onmouseover = function(){
+                oBox.style.background = `url('./images/5.png') no-repeat`;
+            }
+       </script>
+    </body>
+</html>

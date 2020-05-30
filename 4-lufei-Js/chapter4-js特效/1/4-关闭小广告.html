@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>关闭小广告</title>
+        <style type="text/css">
+           *{
+               padding:0;
+               margin:0;
+           }
+            #qr_code{
+                width:180px;
+                height:160px;
+                position:relative;
+                margin:100px auto; 
+            }
+            #qr_code img{
+                position:absolute;
+                right:0;
+            }
+            #qr_code #close {
+                position:absolute;
+                width:18px;
+                height:18px;
+                border:1px solid #e0e0e0;
+                text-align:center;
+                line-height:18px;
+                cursor:pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="qr_code">
+            <img src="./images/logo.png" id="code" width="160">
+            <span id="close">X</span>
+        </div>
+        <script type="text/javascript">
+            var closeSpan = document.getElementById('close');
+            var qr_code = document.getElementById('qr_code');
+                closeSpan.onclick = function(){
+                    qr_code.style.display = 'none'; 
+                }
+       </script>
+    </body>
+</html>

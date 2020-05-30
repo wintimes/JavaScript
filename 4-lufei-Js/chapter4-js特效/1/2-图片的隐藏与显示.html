@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>图片的隐藏与显示</title>
+        <style type="text/css">
+            #flower {
+                width:200px;
+                height:200px;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="btn">隐藏</button>
+        <br>
+        <img src="./images/1.png" id="new">
+        <script type="text/javascript">
+        //1.获取事件源
+            var oBtn = document.getElementById('btn');
+            var newImg = document.getElementsByTagName('img')[0];
+            // var isShow = true;
+        //2.绑定事件
+            oBtn.onclick = function(){
+                  //3.事件驱动程序
+                if(oBtn.innerHTML === '隐藏'){
+                    newImg.style.display = 'none'; 
+                    oBtn.innerHTML = '显示';
+                    // isShow = false;
+                }else{
+                    newImg.style.display = 'block'; 
+                    oBtn.innerHTML = '隐藏';
+                    // isShow = true;
+                }   
+            }
+       </script>
+    </body>
+</html>
