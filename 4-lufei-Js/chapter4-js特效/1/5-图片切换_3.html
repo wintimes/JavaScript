@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>图片切换_2</title>
+        <style type="text/css">
+           *{
+               padding:0;
+               margin:0;
+           }
+           #box {
+               border: 1px solid #ccc;
+               width:450px;
+               height: 70px;
+               padding-top: 450px;
+               background:url('./images/1.png') no-repeat;
+           }
+           #box ul li {
+               display:inline-block;
+               margin-right:15px;
+           }
+           #box ul li img {
+               width:64px;
+           }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <ul>
+                <li class="item">
+                    <img src="./images/iPhone1.jpg">
+                </li>
+                <li class="item">
+                    <img src="./images/iPhone2.jpg">
+                </li>
+                <li class="item">
+                    <img src="./images/iPhone3.jpg">
+                </li>
+                <li class="item">
+                    <img src="./images/iPhone4.jpg">
+                </li>
+                <li class="item">
+                    <img src="./images/iPhone5.jpg">
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            //获取事件源
+            function $(id){
+                return typeof id === 'string' ? document.getElementById(id):null;
+            }
+            var items = document.getElementsByClassName('item');
+            for (var i = 0;i<items.length;i++){
+                var item = items[i];
+                item.id = i + 1;
+                items[i].onmouseover = function(){
+                    $('box').style.background = `url('./images/${this.id}.png') no-repeat`;
+                }
+            }
+       </script>
+    </body>
+</html>
