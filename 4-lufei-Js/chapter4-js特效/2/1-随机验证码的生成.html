@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>表单验证</title>
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            #code{
+                width:100px;
+                height:100px;
+                background-color:#ddd;
+                padding:10px;
+                line-height:100px;
+                text-align:center;
+                font-size:20px;
+                color:red;
+                font-weight:bold;
+            }
+            input{
+                outline:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="code"></div>
+        <input type="text" name="" id="newCode">
+        <input type="button" name="" id="validate" value="验证">
+        <script type="text/javascript">
+            window.onload = function(){
+                //保存全局与新输入的验证码进行校验
+                var code;
+                //1.获取事件源id
+                var codeDiv = document.getElementById('code');
+                var newCodeInput = document.getElementById('newCode');
+                var validate = document.getElementById('validate');
+
+                //一、加载页面并获取对应的验证码
+                creatCode();
+                //获取1-100的随机数
+                function random(min,max){
+                    return Math.floor((Math.random() * (max - min) + min));
+                }
+                function creatCode(){
+                    //设置 验证码为： 默认字符串
+                    code ='';
+                    //设置验证码的长度为 4位
+                    var codeLength = 4;
+                    //设置随机数组中包含的元素
+                    var randomCode = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H',
+                    'I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+                    //开始遍历code字符串从第一位到第四位
+                    for(var i = 0;i<codeLength;i++){
+                        //设置随机范围为 randomCode的0-36位
+                        var index = random(0,36);
+                        code += randomCode[index];
+                    }
+                    // return code;
+                    codeDiv.innerHTML = code;
+                }
+                //二、绑定事件
+                validate.onclick = function(){
+                    //获取用户新输入的验证码
+                    var newCode = newCodeInput.value.toUpperCase();
+                    if(newCode === code){
+                        //相等的话就是验证成功
+                        window.location.href = 'http://www.baidu.com';
+                    }else{
+                        alert('请重新输入验证码');
+                        newCodeInput.value = ' ';
+                    }
+                }
+            }
+       </script>
+    </body>
+</html>
