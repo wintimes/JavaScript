@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>transform</title>
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            #box{
+                width:50px;
+                height:50px;
+                background-color:red;
+                /* transform:translate(100px,200px) rotate(10deg) scale(2.0) skew(10deg); */
+            }            
+        </style>
+    </head>
+    <body>
+        <button id="btn">形变</button>
+        <div id="box">
+        </div>
+        <script type="text/javascript">
+           window.onload =function(){
+               var box = document.getElementById('box');
+               var btn = document.getElementById('btn');
+               var index = 0;
+               btn.onclick = function(){
+                   index++;
+                   box.style.transform = `translate(${100 * index }px,${50 * index }px) rotate(${10 * index }deg)`;                    
+               }
+           }
+       </script>
+    </body>
+</html>

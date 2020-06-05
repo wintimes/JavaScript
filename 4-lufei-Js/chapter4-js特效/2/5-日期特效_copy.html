@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>日期特效</title>
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            #date {
+                width:500px;
+                height:500px;
+                background-color:lightblue;
+                border-radius:5px;
+                margin:100px auto;
+           }
+            #nowDate {
+                width:500px;
+                height:100px;
+                font-size:24px;
+                color:black;
+                line-height:100px;
+                text-align:center;
+                vertical-align: middle;
+           }
+           #day{
+               width:250px;
+               height:250px;
+               background:lightcoral;
+               border-radius:5px;
+               font-size:175px;
+               line-height:250px;
+               text-align:center;
+               
+               
+               margin: 0 auto;
+           }
+        </style>
+    </head>
+    <body>
+        <div id="date">
+            <p id="nowDate">
+            </p>
+            <p id="day">
+            </p>
+        </div>
+        <script type="text/javascript">
+            //1.获取当前的标签
+            var nowDate = document.getElementById('nowDate');
+            var day = document.getElementById('day');
+
+            setInterval(nowNumTime,10);
+            
+            function nowNumTime(){
+                var now = new Date();
+                var hour = now.getHours();
+                var minute = now.getMinutes();
+                var second = now.getSeconds();
+                var year = now.getFullYear();
+                var month = now.getMonth();
+                var d = now.getDate();
+                var week = now.getDay();//对应数组
+
+                var weeks = ['星期天','星期一','星期二','星期三','星期四','星期五','星期六'];
+
+                var nowHour = '' + (hour > 12 ? hour - 12 : hour);
+                if (hour === 0 ){
+                    nowHour = '12';
+                }
+                var nowMinutes = '' + (minute < 10 ?':0':':') + minute;
+                var nowSeconds = '' + (second < 10 ?':0':':') + second;
+                var nowPA = '' + (hour > 12 ? ' P.M.': ' A.M.');
+                var nowTimes =`${year}年${month}月${d}日 ${nowHour}${nowMinutes}${nowSeconds}${nowPA} ${weeks[week]}`;
+                nowDate.innerHTML = nowTimes; 
+                day.innerHTML = d;
+            }
+       </script>
+    </body>
+</html>

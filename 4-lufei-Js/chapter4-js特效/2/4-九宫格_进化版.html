@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>九宫格进化版</title>
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            #wrap{
+                position:relative;
+            }
+            #wrap .item{
+                width:248px;
+                height:360px;
+                font-size:13px;  
+            }
+            #wrap .item .title{
+                width:248px;
+                height:30px;
+                line-height:30px;
+                overflow:hidden;
+                margin-bottom:10px; 
+            }
+            .imgContainer{
+                width:248px;
+                display:table-cell;
+                text-align:center; 
+            }
+            #wrap .item .price{
+                color:#ff6700;
+                font-size:18px;
+                font-weight:bold;
+            }
+            img {
+                width:248px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="cols">
+            <button>3列</button>
+            <button>4列</button>
+            <button>5列</button>
+        </div>
+        <div id="wrap">
+            <div class="item">
+                <div id="imgContainer">
+                    <img src="./images/taobao_1.jpg" alt="">
+                </div>
+                <p class="title">老人鞋7877666</p>
+                <p class="price">￥89</p>
+            </div>
+            <div class="item">
+                <div id="imgContainer">
+                    <img src="./images/taobao_2.jpg" alt="">
+                </div>
+                <p class="title">老人鞋7877666</p>
+                <p class="price">￥89</p>
+            </div>
+            <div class="item">
+                <div id="imgContainer">
+                    <img src="./images/taobao_3.jpg" alt="">
+                </div>
+                <p class="title">老人鞋7877666</p>
+                <p class="price">￥89</p>
+            </div>
+            <div class="item">
+                <div id="imgContainer">
+                    <img src="./images/taobao_4.jpg" alt="">
+                </div>
+                <p class="title">老人鞋7877666</p>
+                <p class="price">￥89</p>
+            </div>
+            <div class="item">
+                <div id="imgContainer">
+                    <img src="./images/taobao_5.jpg" alt="">
+                </div>
+                <p class="title">老人鞋7877666</p>
+                <p class="price">￥89</p>
+            </div>
+            <div class="item">
+                <div id="imgContainer">
+                    <img src="./images/taobao_6.jpg" alt="">
+                </div>
+                <p class="title">老人鞋7877666</p>
+                <p class="price">￥89</p>
+            </div>
+            <div class="item">
+                <div id="imgContainer">
+                    <img src="./images/taobao_7.jpg" alt="">
+                </div>
+                <p class="title">老人鞋7877666</p>
+                <p class="price">￥89</p>
+            </div>
+            <div class="item">
+                <div id="imgContainer">
+                    <img src="./images/taobao_1.jpg" alt="">
+                </div>
+                <p class="title">老人鞋7877666</p>
+                <p class="price">￥89</p>
+            </div>
+            <div class="item">
+                <div id="imgContainer">
+                    <img src="./images/taobao_8.jpg" alt="">
+                </div>
+                <p class="title">老人鞋7877666</p>
+                <p class="price">￥89</p>
+            </div>
+            <div class="item">
+                <div id="imgContainer">
+                    <img src="./images/taobao_9.jpg" alt="">
+                </div>
+                <p class="title">老人鞋7877666</p>
+                <p class="price">￥89</p>
+            </div>
+            
+        </div>
+        <script type="text/javascript">
+            //1.获取标签
+            var btns = document.getElementsByTagName('button');
+            var items = document.getElementsByClassName('item'); 
+            //2.点击事件
+            btns[0].onclick = function(){
+                div_flex(3); 
+            }
+            btns[1].onclick = function(){
+                div_flex(4);
+            }
+            btns[2].onclick = function(){
+                div_flex(5);
+            } 
+            //点击事件的函数封装（减少冗余）
+            function div_flex(colsNum){
+                // 第0行 第0列  top: row * h      left: col * w;
+                // 第0行 第1列  top: 0 * h      left: 1 * w;
+                // 第0行 第2列  top: 0 * h      left: 2 * w;
+                // 第1行 第0列  top: 1 * h      left: 0 * w;
+                // 第1行 第1列  top: 1 * h      left: 1 * w;
+                // 第1行 第2列  top: 1 * h      left: 2 * w;
+                // 第2行 第0列  top: 2 * h      left: 0 * w;
+                // 第2行 第1列  top: 2 * h      left: 1 * w;
+                // 第2行 第2列  top: 2 * h      left: 2 * w;
+                for(var i = 0;i<items.length;i++){
+                    //求每个盒子占的行数和列数   10  3 列 1 行
+                    var row = parseInt(i / colsNum);
+                    var col = parseInt(i % colsNum);
+                    items[i].style.position = 'absolute';
+                    items[i].style.top = (row * items[i].offsetHeight) + 'px';
+                    items[i].style.left = (col * items[i].offsetWidth) + 'px';
+                }
+
+            } 
+       </script>
+    </body>
+</html>
