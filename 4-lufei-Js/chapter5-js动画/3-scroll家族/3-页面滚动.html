@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>scroll家族</title>
+        <style type="text/css">
+            #box {
+                width:100px;
+                height:100px;
+                border:2px solid #000;
+                padding:10px;
+                margin:10px;
+                overflow:scroll;
+            }
+        </style>
+	</head>
+	<body>
+        <button id="btn1">向下滚动</button>
+        <div id="box">
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+        </div>
+        <script type="text/javascript">
+            //1.scrollTop 元素被卷起部分的高度
+            //1.scrollLeft 元素被卷起部分的宽度
+            var box = document.getElementById('box');
+            var btn1 = document.getElementById('btn1');
+            // console.log(box.scrollTop);
+            // console.log(box.scrollLeft);
+            box.onscroll = function(){
+                console.log(box.scrollTop,box.scrollHeight);
+                console.log(box.clientHeight);
+                //当滚动条到达底部时，scrollHeight = clientHeight + scrollTop;
+            }
+            console.log(box.clientHeight);
+            //scrollTop属性是可以读写的。
+            box.scrollTop = 20;
+            btn1.onclick = function(){
+                box.scrollTop += 10;
+            }
+        </script>
+	</body>
+</html>

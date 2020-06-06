@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>scroll家族</title>
+        <style type="text/css">
+            #box {
+                width:100px;
+                height:100px;
+                border:1px solid #000;
+                padding:10px;
+                margin:10px;
+                overflow:scroll;
+            }
+        </style>
+	</head>
+	<body>
+        
+        <div id="box">
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+        </div>
+        <script type="text/javascript">
+            //1.scrollHeight 元素总高度，包括了由溢出而不可见部分
+            //1.scrollWidth 元素总宽度，包括了由溢出而不可见部分
+            var box = document.getElementById('box');
+            //1.无滚动条的时候，与client的情况一样 
+            console.log(box.scrollHeight);
+            console.log(box.scrollWidth);
+        </script>
+	</body>
+</html>
