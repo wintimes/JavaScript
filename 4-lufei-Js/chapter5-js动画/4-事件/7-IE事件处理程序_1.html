@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>7-IE事件处理程序</title>
+        <style type="text/css">
+            
+            #box{
+                width:200px;
+                height:200px;
+                background-color:lightcoral;
+            }
+            
+        </style>
+	</head>
+	<body>
+        <div id="box"></div>
+        
+        <script type="text/javascript">
+            //IE： attachEvent() detachEvent()
+            var box = document.getElementById('box');
+            /*
+            box.attachEvent('onclick',function(){//IE 11不支持attachEvent()
+                //首先看到无法实现这个事件的处理方法；
+                //先通过alert(1);判断是否进入这个function中
+                alert(1);//ie:8-10均可以，但是验证this 的指向到底是什么
+                console.log(this); //指向window
+                // this.innerHTML = '1';   
+                box.innerHTML = '1';//正确的方法
+            })
+            */
+            box.attachEvent('onclick',function(){//IE 11不支持attachEvent()
+                box.innerHTML += '1';//正确的方法
+            })
+            box.attachEvent('onclick',function(){//IE 11不支持attachEvent() IE 8 为（倒叙执行），IE 9-10为（正序执行）
+                box.innerHTML += '2';//正确的方法
+            })
+            
+        </script>
+	</body>
+</html>

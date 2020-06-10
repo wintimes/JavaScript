@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>6-DOM2级事件处理程序</title>
+        <style type="text/css">
+            
+            #box{
+                width:200px;
+                height:200px;
+                background-color:lightcoral;
+            }
+            
+        </style>
+	</head>
+	<body>
+        <div id="box"></div>
+        
+        <script type="text/javascript">
+            //DOM2级事件处理程序
+            //布尔值默认为 false 冒泡阶段 ，true 为捕获阶段
+            //addEventListener(事件名， 处理事件的匿名函数，布尔值) removeEventListener()
+            var box = document.getElementById('box');
+            
+            //以下是无效的事件移除方式
+
+            
+            /*
+            //添加事件的监听者
+            box.addEventListener('click',function(){
+                box.innerHTML += 1;
+            },false);
+            box.removeEventListener('click',function(){
+                box.innerHTML += 1;
+            },false); 
+
+            */
+            //添加事件监听者的函数
+            function handler(){
+                this.innerHTML += '1';
+            }
+            box.addEventListener('click',handler,false);
+            box.removeEventListener('click',handler,false);
+            //ie 8 不支持这个addEventListener 这种方式
+
+        </script>
+	</body>
+</html>

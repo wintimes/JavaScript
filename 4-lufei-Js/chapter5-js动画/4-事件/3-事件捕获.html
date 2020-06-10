@@ -29,23 +29,39 @@
                     IE：事件流是事件冒泡流，指的是，事件从按钮依次找到它的父级，爷级等等
                     scope：事件流是事件捕获流，指的是，事件从页面的html开始依次找到它的儿子最终的后代。  
             */
-            //事件冒泡
-            var box  = document.getElementById('box');
-            box.onclick = function(){
+            //事件捕获
+            var box = document.getElementById('box');
+            box.addEventListener('click',function(){
                 box.innerHTML += 'box\n';
-            }
-            document.body.onclick = function(){
+            },true);
+            document.body.addEventListener('click',function(){
                 box.innerHTML += 'body\n';
-            }
-            document.documentElement.onclick = function(){
+            },true);
+            document.documentElement.addEventListener('click',function(){
                 box.innerHTML += 'html\n';
-            }
-            document.onclick = function(){
+            },true);
+            document.addEventListener('click',function(){
                 box.innerHTML += 'document\n';
-            }
-            window.onclick = function(){
+            },true);
+            window.addEventListener('click',function(){
                 box.innerHTML += 'window\n';
-            }
+            },true);
+            //事件冒泡
+            box.addEventListener('click',function(){
+                box.innerHTML += 'box\n';
+            },false);
+            document.body.addEventListener('click',function(){
+                box.innerHTML += 'body\n';
+            },false);
+            document.documentElement.addEventListener('click',function(){
+                box.innerHTML += 'html\n';
+            },false);
+            document.addEventListener('click',function(){
+                box.innerHTML += 'document\n';
+            },false);
+            window.addEventListener('click',function(){
+                box.innerHTML += 'window\n';
+            },false);
             
         </script>
 	</body>
