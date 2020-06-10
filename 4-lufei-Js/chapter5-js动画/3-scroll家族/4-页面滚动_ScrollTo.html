@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>页面滚动</title>
+		<title>scrollTo</title>
         <style type="text/css">
             *{
                 padding:0;
@@ -19,7 +19,7 @@
                 margin:10px;
                 overflow:scroll;
             }
-            #btn{
+            #backTop{
                 position:fixed;
                 top:200px;
                 left:30px;
@@ -28,7 +28,7 @@
         </style>
 	</head>
 	<body>
-        <button id="btn">回到顶部</button>
+        <button id="backTop">回到顶部</button>
         <div id="box">
             <p>内容</p>
             <p>内容</p>
@@ -65,12 +65,9 @@
         <script type="text/javascript">
             window.onscroll = function(){
                 var docScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-                var btn = document.getElementById('btn');
-                btn.onclick = scrollTop;
-                function scrollTop(){
-                    if(docScrollTop){
-                       document.body.scrollTop = document.documentElement.scrollTop = 0;
-                    }
+                var backTop = document.getElementById('backTop');
+                backTop.onclick = function(){
+                    window.scrollTo(0,100);
                 }
             }
         </script>
