@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>2-事件冒泡和事件捕获</title>
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            #box{
+                width:200px;
+                height:200px;
+                background-color:lightcoral;
+            }
+        </style>
+	</head>
+	<body>
+        <div id="box"></div>
+        <script type="text/javascript">
+            /*
+                1.js操作css成为css的脚本化，js与html交互通过事件完成
+                2.事件就是文档或者浏览器发生的一些特定的交互瞬间
+                3.事件流（事件传播）形容的是网页上接收事件的顺序
+
+                4.history
+                //如果单机了某个事件，其实单击事件不仅仅是发生在按钮上，而是整个页面上。
+                /
+                    IE：事件流是事件冒泡流，指的是，事件从按钮依次找到它的父级，爷级等等
+                    scope：事件流是事件捕获流，指的是，事件从页面的html开始依次找到它的儿子最终的后代。  
+            */
+            //事件冒泡
+            var box  = document.getElementById('box');
+            box.onclick = function(){
+                box.innerHTML += 'box\n';
+            }
+            document.body.onclick = function(){
+                box.innerHTML += 'body\n';
+            }
+            document.documentElement.onclick = function(){
+                box.innerHTML += 'html\n';
+            }
+            document.onclick = function(){
+                box.innerHTML += 'document\n';
+            }
+            window.onclick = function(){
+                box.innerHTML += 'window\n';
+            }
+            
+        </script>
+	</body>
+</html>
