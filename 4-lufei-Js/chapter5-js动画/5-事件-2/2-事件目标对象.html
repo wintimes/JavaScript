@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>2-事件目标对象</title>
+        <style type="text/css">   
+            .item{
+                width:100px;
+                height:80px;
+                background-color:lightblue;
+                margin:50px 100px;
+            }
+        </style>
+	</head>
+	<body>
+        
+        <ul id="box">
+            <li class="item">1</li>
+            <li class="item">2</li>
+
+        </ul>
+        <script type="text/javascript">
+            //currentTarget   target 和srcElement(兼容性)
+            var box = document.getElementById('box');
+            //currentTarget  返回 事件的 当前所在的 节点， 正在执行的监听函数所绑定的节点
+            /*
+            1.currentTarget
+            box.onclick = function(e){
+                e = e || window.event;
+                console.log(e.currentTarget);
+                var items = document.getElementsByTagName('li');
+                items[0].innerHTML = e.currentTarget;
+            }
+            */
+            //2.Target 返回的 是 事件的 实际目标对象 兼容性（ie8 不支持）
+            /*
+            box.onclick = function(e){
+                e = e || window.event;
+                console.log(e.target);
+                console.log(e.target===this);
+                //this 与 currentTarget 属性是一致的
+                console.log(e.currentTarget===this); 
+            }
+            */
+            //srcElement 和 Target 是一致的，FF低版本的浏览器是不支持的
+            /*
+            box.onclick = function(e){
+                e = e || window.event;
+                console.log(e.srcElement);                   
+            }
+            */
+            //兼容性 代码
+            box.onclick = function(e){
+                e = e || window.event;
+                var target = e.target || e.srcElement;
+                target.style.backgroundColor = 'lightcoral';
+            }
+            box.onmouseout = function(e){
+                e = e || window.event;
+                var target = e.target || e.srcElement;
+                target.style.backgroundColor = 'lightblue';
+            }
+            
+        </script>
+	</body>
+</html>
