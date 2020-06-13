@@ -62,11 +62,39 @@
 		</div>
 		<script type="text/javascript">
 			window.onload = function(){
+                //1.获取需要的标签 
                 var progress = document.getElementById('progress');
                 var progress_bar = progress.children[0];
+                var progress_value = progress.children[1];
                 var progress_bar_current = progress_bar.children[0];
-                var bar = progress_bar.children 
+                var bar = progress_bar.children[1];
+                //2.监听鼠标按下 
+                bar.onmousedown = function(e){
+                    e = e || window.event;
+                    //2.1获取初始距离
+                    var offsetLeft = progress.offsetLeft;
+                    //2.2监听鼠标移动
+                    document.onmousemove = function(e){
+                        e = e || window.event;
+                        //2.3获取移动的距离
+                        var x = e.clientX - offsetLeft;
+                        console.log(e);
+                        //2.4边界处理
+                        if(x < 0){
+                            x = 0;
+                        }else if(x > progress_bar.offsetWidth - bar.offsetWidth){
+                            x = progress_bar.offsetWidth - bar.offsetWidth;
+                        }
+                        //2.5 移动
+                        bar.style.left = x + 'px';
+                        progress_bar_current.style.width = x + 'px';
+                        progress_value.innerHTML = parseInt(( x / (progress_bar.offsetWidth - bar.offsetWidth)) * 100) + '%';
+                    }
+                    document.onmouseup = function(){
+                        document.onmousemove = null;
+                    }
 
+                }
             }
 		</script>
 	</body>
