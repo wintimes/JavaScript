@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>offsetLeft&offsetTop</title>
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            #father{
+                width:500px;
+                height:500px;
+                /* border:5px solid #000; */
+                background-color:lightcoral;
+                /* position:relative; */
+                margin:40px;
+            }
+            #son{
+                width:200px;
+                height:100px;
+                border:5px solid #000;
+                margin-left:20px;
+                background-color:lightblue;
+                
+            }
+        </style>
+	</head>
+	<body>
+        <!-- offset demension 偏移量
+            1.定位父级 offsetParent 
+            2.offsetLeft offsetTop
+            3.offsetHeight offsetWidth 
+         -->
+        <div id="father">
+            <div id="son"></div>
+        </div>
+        <script type="text/javascript">
+            //offsetTop 指的是当前盒子的上边框到offsetParent的上边框的距离
+            //offsetLeft 指的是当前盒子的左边框到offsetParent的左边框的距离
+            var father = document.getElementById('father');
+            var son = document.getElementById('son');
+            console.log(son.offsetParent);
+            //父级元素有定位 
+            console.log(son.offsetTop,son.offsetLeft); // 0 20 
+            //父级元素没有定位
+            console.log(son.offsetTop,son.offsetLeft); // 40 60 \
+            //总结 ： 相对于父元素：看父元素是否有定位，如果没有就找最近的那个有定位的元素， 最远到body
+        </script>
+	</body>
+</html>

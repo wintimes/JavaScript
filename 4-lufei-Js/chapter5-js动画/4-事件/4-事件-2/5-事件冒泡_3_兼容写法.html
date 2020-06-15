@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>5-事件冒泡</title>
+	</head>
+	<body>
+        <button id="btn" style="height: 30px; width: 200px;">按钮</button>
+		<input type="text" id="test">
+        <script type="text/javascript">
+            //bubbles cancelBubble stopPropagation()  stopImmediatePropagation()
+            //1.bubbles 返回的是 布尔值 true 表示冒泡
+            //注意，其中大部分事件都会冒泡 ，但是 focus,blur,scroll 不会冒泡
+            var btn = document.getElementById('btn');
+            var test = document.getElementById('test');
+            /*
+            btn.onclick = function(e){
+                e = e || window.event;
+                console.log(e.bubbles);
+            }
+            test.onfocus = function(e){
+                e = e || window.event;
+                console.log(e.bubbles);
+            }
+            */
+            //2.stopPropagation() 表示取消事件的进一步冒泡 ，无返回值，但是无法阻止同一事件的其他监听
+            //阻止事件冒泡 IE8不支持
+            //DOM 0 级
+            /*
+            btn.onclick = function(e){
+                e = e || window.event;
+                e.stopPropagation();
+                this.innerHTML = '事件发生了';
+            }
+            */
+            //DOM 2级
+            //使用了停止传播的 stopPropagation()方法不能停止同一事件的其他监听，若想阻止，
+            //使用stopImmediatePropagation()
+            /*
+            btn.addEventListener('click',function(e){
+                e = e || window.event;
+                e.stopPropagation();
+                this.innerHTML = '修改了'
+            },false);
+            btn.addEventListener('click',function(e){
+                e = e || window.event;
+                this.style.backgroundColor = 'lightblue';
+            },false);
+            */
+            //3.stopImmediatePropagation() 既可以阻止事件冒泡，也可以阻止同一事件的多个监听函数的调用
+            /*
+            btn.addEventListener('click',function(e){
+                e = e || window.event;
+                e.stopImmediatePropagation();
+                this.innerHTML = '修改了'
+            },false);
+            btn.addEventListener('click',function(e){
+                e = e || window.event;
+                this.style.backgroundColor = 'lightblue';
+            },false);
+            */
+            //4.cancelBubble 阻止冒泡 可以读写，默认值为false 当设置为true 时可以取消事件冒泡
+            /*
+            btn.onclick = function(e){
+                e = e || window.event;
+                e.cancelBubble = true;
+                console.log(e.bubbles);
+            }
+            */
+            //兼容性写法
+            //兼容 stopPropagation（使用最多） 和 stopImmediatePropagation ///ie8 不支持
+            // e.cancelBubble = true ; 全浏览器支持， 不是标准写法；
+            
+            //方法如下
+            /*
+            var handler = function(e){
+                e = e || window.event;
+                if(e.stopPropagation){
+                    e.stopPropagation();
+                }else{
+                    e.cancelBubble = true;
+                }
+            }
+            */
+            //实际操作：
+            btn.onclick = function(e){
+                e = e || window.event;               
+                //兼容停止事件冒泡
+                if(e.stopPropagation){
+                    e.stopPropagation();
+                }else{
+                    e.cancelBubble = true;
+                }
+                //事件执行
+                this.innerHTML = '执行了兼容写法';
+            }
+
+            document.body.onclick = function(){
+                console.log('body');
+            }
+        </script>
+	</body>
+</html>

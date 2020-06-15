@@ -12,12 +12,12 @@
             #clock {
                 height:600px;
                 width:600px;
-                background:url('../images/clock.png') no-repeat;
+                background:url('../images/clock.jpg') no-repeat;
                 position:relative;
             }
             #hour,#minute,#second {
                 position:absolute;
-                width:20px;
+                width:30px;
                 height:600px;
                 left:50%;
                 top:0;
@@ -41,7 +41,27 @@
             <div id="minute"></div>
             <div id="second"></div>      
         </div> 
-        <script type="text/javascript">           
+        <script type="text/javascript">  
+            //1.获取标签
+            var hour = document.getElementById('hour');
+            var minute = document.getElementById('minute');
+            var second = document.getElementById('second');
+
+            // 2.开启定时器 获取当前的时间  
+            setInterval(function(){
+                //1.获取当前的时间戳
+                var now = new Date();
+                //2.获取小时 分 秒
+                var s = now.getSeconds();
+                var m = now.getMinutes() + s / 60;
+                var h = now.getHours() % 12 + m / 60; 
+                
+                //3.旋转 
+                second.style.transform = `rotate(${s * 6}deg)`;
+                minute.style.transform = `rotate(${m * 6}deg)`;
+                hour.style.transform = `rotate(${h * 30}deg)`;
+                
+            },10)    
        </script>
     </body>
 </html>

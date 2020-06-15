@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>client家族</title>
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            #box{
+                width:200px;
+                height:200px;
+                border:1px solid red;
+                padding:20px; 
+            }
+        </style>
+	</head>
+	<body>
+        
+        <div id="box"></div>
+        <script type="text/javascript">
+            /*
+            1.client 客户端大小 
+            //不包含border
+            1.clientWidth = width + padding-left + padding-right;
+            2.clientHeight = height + padding-top + padding-bottom;
+            //
+            */
+            var box = document.getElementById('box');
+            console.log(box.clientWidth,box.clientHeight);
+            console.log(box.clientTop,box.clientLeft);
+
+            //获取页面的大小
+            console.log(document.documentElement.clientWidth,document.documentElement.clientHeight);
+            //1.client的所有的值都是只读的
+            box.clientHeight = 10;
+            //2.如果给元素设置display:none;客户端client属性都为0;
+
+
+            //3.尽量避免重复访问这些属性
+            console.time('time');
+            b = box.clientHeight;
+            for (var i = 0;i< 10000000;i++){
+                var a = b;
+            }
+            console.timeEnd('time');
+
+        </script>
+	</body>
+</html>
