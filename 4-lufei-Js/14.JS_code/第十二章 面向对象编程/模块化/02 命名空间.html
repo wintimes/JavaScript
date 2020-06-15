@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 命名空间:全局作用域下 避免变量污染 -->
+
+		<script src="js/namespace.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/namespace_sub.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			console.log(namespace);
+			var p1 = new namespace.PersonInfo({
+				name: 'mjj',
+				gender: '男'
+			});
+			// console.log(p1);
+			var helloStr = p1.getHello();
+			console.log(helloStr);
+			// namespace.personInfoUtil.show(p1);
+			var c = new namespace.sub.Cat('闪电', '白色');
+			c.sleep();
+			console.log(c);
+		</script>
+	</body>
+</html>

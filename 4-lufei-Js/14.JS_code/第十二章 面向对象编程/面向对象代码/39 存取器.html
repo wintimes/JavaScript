@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>39 存取器</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// Object.defineProperty() get和set
+			/* var obj = Object.defineProperty({},'p',{
+				get:function(){
+					return 'getter';
+				},
+				set:function (value){
+					// console.log('setter:' + value);
+					return;
+				}
+			})
+			console.log(obj.p);
+			obj.p = 123;
+			console.log(obj); */
+			
+			/* var obj = {
+				get p(){
+					return 'getter';
+				},
+				set p(value){
+					console.log('setter:' + value);
+				}
+			}
+			console.log(obj.p);
+			obj.p = 123; */
+			
+			var obj = {
+				n: 5,
+				get a(){
+					return this.n++;
+				},
+				set a(newValue){
+					if(newValue > this.n){
+						this.n = newValue;
+					}else{
+						throw new Error('新的值必须大于当前的值');
+					}
+				}
+			}
+			console.log(obj.a);
+			console.log(obj.a);
+			obj.a = 10;
+			console.log(obj.a);
+			obj.a = 3;
+
+			
+
+
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

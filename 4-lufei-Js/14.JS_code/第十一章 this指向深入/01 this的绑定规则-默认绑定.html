@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>01 this的绑定规则- 默认绑定</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// this默认指向了window
+			// 1.全局环境下的this指向了window
+			console.log(this);
+			// 2.函数独立调用,函数内部的this也指向了window
+			function fn(){
+				console.log(this);
+			}
+			fn();
+			// 3.被嵌套的函数独立调用时,this默认指向了window
+			/* var a = 0;
+			var obj = {
+				a:2,
+				foo:function (){
+					//函数当做对象的方法来调用 this指向了obj
+					var that = this;
+					function test(){
+						console.log(that.a);
+					}
+					test();
+				}
+			}
+			obj.foo(); */
+			
+			// 4.IIFE 自执行函数中内部的this指向了window
+			/* var a = 10;
+			function foo(){
+				console.log(this);
+				(function test(that){
+					console.log(that.a);
+				})(this);
+			}
+			var obj = {
+				a:2,
+				foo:foo
+			}
+			obj.foo();
+			
+			(function (){
+				console.log('自执行函数中内部的this:'+ this);
+			})() */
+			
+			// 5.闭包中this默认指向了window
+			
+			var a = 0;
+			var obj = {
+				a:2,
+				foo:function(){
+					var _this = this;
+					return function test(){
+						return _this.a;
+					}
+				}
+			}
+			var fn = obj.foo();
+			console.log(fn());
+			
+			
+		</script>
+	</body>
+</html>
