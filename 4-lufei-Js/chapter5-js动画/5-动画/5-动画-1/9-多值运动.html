@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>9-多值运动</title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			div{
+				width: 300px;
+				height: 150px;
+				background-color: royalblue;
+				margin: 20px 0;
+				border: 4px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<script type="text/javascript">
+			window.onload = function() {
+                var allBoxs = document.getElementsByTagName('div');
+                allBoxs[0].onmouseover = function(){
+                    startAnimation(this,'width',600);
+                }
+                allBoxs[0].onmouseout = function(){
+                    startAnimation(this,'width',300);
+                }
+                allBoxs[1].onmouseover = function(){
+                    startAnimation(this,'height',300);
+                }
+                allBoxs[1].onmouseout = function(){
+                    startAnimation(this,'height',150);
+                }
+                var speed = 0;
+                function startAnimation(obj,attr,endTarget){
+                    //针对多物体运动中 的 定时器要绑定在 对应的物体上
+                    clearInterval(obj.timer);
+                    obj.timer = setInterval( function (){
+                        //获取样式属性
+                        var objWidth = parseInt(getStyle(obj,attr));
+                        speed = ( endTarget - objWidth ) / 20 ;
+                        speed = endTarget > objWidth ? Math.ceil(speed) : Math.floor(speed);
+                        if(endTarget === objWidth){
+                            clearInterval(obj.timer);
+                            return;  
+                        }
+                        obj.style[attr]= objWidth + speed + 'px';
+                    },30)                    
+                }
+                function getStyle(obj,attr){
+                    //兼容ie
+                    if(obj.currentStyle){
+                        return obj.currentStyle[attr];
+                        
+                    }else{
+                    //兼容 常用浏览器 
+                        return getComputedStyle(obj,null)[attr];
+                    }
+                }
+			}
+		</script>
+	</body>
+</html>

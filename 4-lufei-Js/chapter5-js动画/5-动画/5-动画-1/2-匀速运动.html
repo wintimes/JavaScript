@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>2-匀速运动</title>
+		<style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            button{
+                width:80px;
+                height:40px;
+                
+            }
+            #box {
+                width:200px;
+                height:200px;
+                background-color: pink; 
+                position: absolute;
+                top:50px;
+            }
+		</style>
+	</head>
+	<body>
+        <a href="#">5</a>
+		<!-- 如何让物体运动起来 
+        -->
+        <button id="btn">按钮</button>
+        <div id='box'>
+        </div>
+		<script type="text/javascript">
+        //简单动画存在两个问题
+                            //1.没有边界
+                            //2.定时器管理
+            //1.获取事件源 标签 
+             var btn = document.getElementById('btn');
+             var box = document.getElementById('box');
+            //  var num = 0;
+            var timer = null;
+             //2.绑定点击事件
+                btn.onclick = function(){
+                    clearInterval(timer);
+                    //3.让物体运动起来                    
+                    timer = setInterval(function(){
+                    // num++;
+                    if(box.offsetLeft === 500){
+                        clearInterval(timer);
+                        return;
+                        
+                    }
+                    box.style.left = box.offsetLeft + 10 + 'px';
+                    },100);
+                }
+        </script>
+	</body>
+</html>	
+	

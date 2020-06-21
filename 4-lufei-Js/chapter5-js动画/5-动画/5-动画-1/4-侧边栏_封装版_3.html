@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>3-侧边栏_动画版</title>
+		<style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            
+            #box {
+                width:200px;
+                height:200px;
+                background-color: pink; 
+                position: relative;
+                left:-200px;
+            }
+            #box span {
+                position:absolute;
+                width:40px;
+                height:60px;
+                color:#fff;
+                line-height:60px;
+                text-align:center;
+                background-color:black;
+                right:-40px;
+                /* 居中显示的操作
+                top:50%;
+                margin-top:-${高度的一半}px;
+                 */
+                top:50%;
+                margin-top:-30px;
+                text-align:center;
+            }
+		</style>
+	</head>
+	<body>
+		<div id="box">
+            <span > 拉开 </span>
+        </div>
+		<script type="text/javascript">
+            var box = document.getElementById('box');
+            var timer = null , speed = 0;
+            box.onmouseover = function(){
+                startAnimation(this,0);             
+                             
+            }
+            box.onmouseout = function(){
+                startAnimation(this,-200);               
+            }
+            //封装版 动画函数
+            function startAnimation(obj,end){
+                clearInterval(timer);
+                speed  = end > obj.offsetLeft ? 5 : -5;
+                timer = setInterval(function(){
+                    if(obj.offsetLeft === end){
+                        clearInterval(timer);
+                        return;
+                    }
+                    obj.style.left = obj.offsetLeft + speed + 'px';
+                },30)                
+            }
+        </script>
+	</body>
+</html>	
+	

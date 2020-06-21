@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>3-侧边栏</title>
+		<style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            
+            #box {
+                width:200px;
+                height:200px;
+                background-color: pink; 
+                position: relative;
+                left:-200px;
+            }
+            #box span {
+                position:absolute;
+                width:40px;
+                height:60px;
+                color:#fff;
+                line-height:60px;
+                text-align:center;
+                background-color:black;
+                right:-40px;
+                /* 居中显示的操作
+                top:50%;
+                margin-top:-${高度的一半}px;
+                 */
+                top:50%;
+                margin-top:-30px;
+                text-align:center;
+            }
+		</style>
+	</head>
+	<body>
+		<div id="box">
+            <span > 拉开 </span>
+        </div>
+		<script type="text/javascript">
+            var box = document.getElementById('box');
+            box.onmouseover = function(){
+                box.style.left = 0 + 'px';
+            }
+            box.onmouseout = function(){
+                box.style.left = -200 + 'px';
+            }
+        </script>
+	</body>
+</html>	
+	

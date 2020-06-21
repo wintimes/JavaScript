@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>5-缓动运动</title>
+		<style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            
+            #box {
+                width:200px;
+                height:200px;
+                background-color: pink; 
+                position: relative;
+                left:-200px;
+            }
+            #box span {
+                position:absolute;
+                width:40px;
+                height:60px;
+                color:#fff;
+                line-height:60px;
+                text-align:center;
+                background-color:black;
+                right:-40px;
+                /* 居中显示的操作
+                top:50%;
+                margin-top:-${高度的一半}px;
+                 */
+                top:50%;
+                margin-top:-30px;
+                text-align:center;
+            }
+		</style>
+	</head>
+	<body>
+		<div id="box">
+            <span > 拉开 </span>
+        </div>
+		<script type="text/javascript">
+            //缓动运动 公式
+            //速度（变化中的值）= （ 初始值 - 起始值 ）/ 缓动系数  速度由 快  变 慢;
+
+            window.onload = function(){
+                var box = document.getElementById('box');
+                var timer = null,end = 0, end2 = -200,speed = 0;
+                box.onmouseover = function(){
+                    clearInterval(timer);
+                    timer = setInterval(function(){
+                        speed = Math.ceil((end - box.offsetLeft) / 20); //其中出现了 -9 - （0.45）无法取整的结果，不能继续向下递减。
+                        if(box.offsetLeft === end){
+                            clearInterval(timer);
+                            return;
+                        }
+                        box.style.left = box.offsetLeft + speed + 'px'; 
+                    },30)                    
+                }
+                box.onmouseout = function(){
+                    clearInterval(timer);
+                    timer = setInterval(function(){
+                        speed = Math.floor((end2 - box.offsetLeft) / 20);//其中出现了 -190 - （0.5）无法取整的结果，不能继续向上递减。
+                        if(box.offsetLeft === end2){
+                            clearInterval(timer);
+                            return;
+                        }
+                        box.style.left = box.offsetLeft + speed + 'px'; 
+                    },30)                    
+                }
+                
+            }
+        </script>
+	</body>
+</html>	
+	

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>10-链式运动</title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#box{
+				width: 200px;
+				height: 200px;
+				background-color: royalblue;
+				margin: 20px 0;
+				border: 4px solid #000;
+                opacity:0.3;
+                filter:alpha(opacity: 30);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+        <script src="./js/myAnimation.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+                var box = document.getElementById('box');
+                box.onmouseover = function(){
+                    startAnimation(this,'width',400,function(){
+                        startAnimation(box,'height',400,function(){
+                            startAnimation(box,'opacity',100)
+                        })
+                    });
+                }
+			} 
+		</script>
+	</body>
+</html>

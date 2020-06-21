@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>5-缓动运动</title>
+		<style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            
+            #box {
+                width:200px;
+                height:200px;
+                background-color: pink; 
+                position: relative;
+                left:-200px;
+            }
+            #box span {
+                position:absolute;
+                width:40px;
+                height:60px;
+                color:#fff;
+                line-height:60px;
+                text-align:center;
+                background-color:black;
+                right:-40px;
+                /* 居中显示的操作
+                top:50%;
+                margin-top:-${高度的一半}px;
+                 */
+                top:50%;
+                margin-top:-30px;
+                text-align:center;
+            }
+		</style>
+	</head>
+	<body>
+		<div id="box">
+            <span > 拉开 </span>
+        </div>
+		<script type="text/javascript">
+            //缓动运动 公式
+            //速度（变化中的值）= （ 初始值 - 起始值 ）/ 缓动系数(与速度成反比)  速度由 快  变 慢;
+
+            window.onload = function(){
+                //1.获取标签元素
+                var box = document.getElementById('box'); //box标签
+                var timer = null;// 定义定时器；
+                //2.绑定事件   
+                box.onmouseover = function(){
+                    slowAnimation(this,0);                   
+                }
+                box.onmouseout = function(){
+                    slowAnimation(this,-200);                
+                } 
+                //3.动画方法封装               
+                function slowAnimation(obj,end){
+                    //1.关闭定时器
+                    clearInterval(timer);
+                    //2.开启定时器
+                    timer = setInterval(function(){
+                        speed = (end - obj.offsetLeft) / 20; //其中出现了 -9 - （0.45）无法取整的结果，不能继续向下递减。
+                        speed = speed > 0 ? Math.ceil(speed): Math.floor(speed);
+                        if(obj.offsetLeft === end){
+                            clearInterval(timer);
+                            return;
+                        }
+                        obj.style.left = obj.offsetLeft + speed + 'px'; 
+                    },30)  
+                }
+            }
+
+        </script>
+	</body>
+</html>	
+	
