@@ -2,13 +2,13 @@ window.onload = function() {
 	// 1.获取标签
 	var slider = document.getElementById('slider');
 	var slider_main = document.getElementById('slider_main');
-	var allBoxs = slider_main.children;
+    var allBoxs = slider_main.children;   
 	var next = document.getElementById('next');
 	var prev = document.getElementById('prev');
 	var slider_index = document.getElementById('slider_index');
 	var iNow = 0; //当前可视元素的索引
 	var timer = null;
-	// 2.动态创建索引器
+    // 2.动态创建索引器 
 	for (var i = 0; i < allBoxs.length; i++) {
 		var span = document.createElement('span');
 		if (i === 0) {
