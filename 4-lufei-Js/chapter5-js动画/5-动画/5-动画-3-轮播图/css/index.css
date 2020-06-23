@@ -39,14 +39,25 @@
     bottom: 0;
     background-color:rgba(0, 0, 0, .5);
 }
+
+.slider_index .slider_index_icon {
+    display: inline-block;
+	line-height: 40px;
+	margin: 0 10px;
+    cursor: pointer;
+}
+.slider_index .slider_index_icon.current{
+    color: red;
+}
+
 .slider_scroll span{
     position: absolute;
     width: 30px;
     height: 69px;
-    background:url(../../images/icon-slides.png) no-repeat;
+    background:url(../icon-slides.png) no-repeat;
     top: 50%;
     margin-top: -34px;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 .slider_scroll span.next{
     right:0;
