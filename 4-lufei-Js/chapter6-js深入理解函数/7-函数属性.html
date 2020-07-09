@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>7-函数属性</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+            //length属性
+            // arguments 对象中的Length属性表示实参，
+            //而函数参数的length 属性表示的时形参的个数
+            function add(x,y){
+                console.log(arguments.length);
+                console.log(add.length);
+            }
+            add(1,2,3,4,5)
+            //name 当前函数的名字
+            function fn(){};
+            console.dir(fn.name);//fn
+            var fn2 = function(){};
+            console.log(fn2.name);//fn2
+            var fn3 = function abc(){};
+            console.log(fn3.name);//abc
+
+            //prototype 属性
+            //每一个函数斗鱼一个oprototype属性
+            function fn(){};
+            console.log(fn.prototype);
+            fn.prototype.a  = 1;
+            console.log(fn.prototype);
+            //关于原型对象，后面面向对象中详细讲，很重要。
+            
+
+        </script>
+	</body>
+</html>

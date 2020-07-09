@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>02函数返回值</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+            //return 1 ;应用在函数中
+            /*
+            function fn(){
+                return {
+                    name: 'htl',
+                    age: 19
+                }
+                alert(1);
+            }
+            console.log(fn());//如果没有函数返回值，调用表达式的结果是undefined
+           */
+           //返回数值，数组，对象
+
+           //并不是所有函数中 的return 之后的所有代码都不执行
+           /*
+           function testFinally(){
+                try{
+                    //从头到尾去执行之后依旧执行finally
+                    //var a = 2;
+                    //var b = 3;
+                    //console.log(a+b);
+                    console.log(x);
+                    return 2;
+                }catch(e){
+                    alert(e);
+                    return 1;
+                }finally{
+                    return 0;
+                }
+            }    
+            console.log(testFinally()); 
+            */
+            //一个函数中可以有多个return 语句
+            /*
+            function compare (x,y){
+                if(x > y){
+                    return x - y ;
+                }else{
+                    return y - x ;
+                }
+            }
+            */
+           // 如果函数调用时，在前面加上了new前缀，
+           // 且返回值不是一个对象，或者没有返回值，则返回该对象。（this）
+           /* function fn(){
+                console.log(this);
+                this.a = 2;
+                return 1;
+            }
+            var test = new fn();
+            console.log(test);
+            */
+
+            //如果返回值是一个对象，则返回该对象
+            /*
+            function fn(){
+                this.a = 2;
+                return {a:1};
+            }
+            var test = new fn();
+            console.log(test.constructor);
+            */
+            //返回一个分号 ;终止语句后面的不会再执行了
+            function fn(){
+                console.log(22222);
+                return ;
+                alert(1)
+            }
+            fn();
+        </script>
+	</body>
+</html>

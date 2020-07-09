@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>03 函数调用模式和方法调用模式</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+            //函数调用4种方式： 
+            //函数调用模式，方法调用模式，构造调用模式，间接调用模式
+
+            //***********************************************//
+
+            //1.函数调用模式
+            /*
+            function add(x,y){
+                //'use strict'; 
+                //严格模式下，当前函数的this 指向了 undefined
+                console.log(this);//在非严格模式下，window对象  
+                return x + y;
+
+            }
+            console.log(this); //window
+            var sum = add(3,4); //7
+            */
+            //重写
+            /*
+            function fn(){
+                this.a = 1;
+               console.log(this);
+            }
+            fn();
+            this.a = 5;
+            console.log(this);
+            */
+            //注意：小心避免全局属性 重写带来的问题。
+            //***********************************************//
+
+            //2.方法调用模式
+            /*
+            var obj = {
+                a : 1,
+                //fn 称为 obj对象的方法
+                fn:function(){
+                    //console.log(this);//obj 对象
+                    //console.log('1');
+                    this.fn2();
+                },
+                fn2:function(){
+                    this.a = 2;
+                }
+            }
+            obj.fn(); 
+            // obj.fn2();
+            console.log(obj.a)
+            */
+            //对象中的this,指的就是对象本身。
+
+            //***********************************************//
+            //3.构造函数调用模式
+            //网页上基本看不到
+            // function fn(x,y){
+            //     this.a = x+y;
+            // }
+            // //this 的指向问题：
+            // //当作普通函数调用时，this指向 的是window,
+            // //当作构造函数调用，this指向当前的函数
+            // //当作对象方法，this 一般情况指向了当前的对象
+
+            // var obj = new fn(2,3);
+            // console.log(obj)
+            // var obj = {a:5}
+            // function fn(){
+            //     console.log(this);
+            //     this.a = 10;
+            //     return obj;
+            // }
+            // // var a = new fn;  //var a = new fn();
+            // var a = fn();  //区分this指向，只要 new过就会变成 构造函数
+
+            // console.log(a);
+            
+
+            //4.间接调用模式 call({},1,2,3) apply({},[1,2,3])
+            var obj = {
+                a:10
+            }
+            function sum(x,y){
+                // console.log(this); this指的是 obj 对象因为使用了call和apply 方法。
+                return x + y + this.a;
+            }
+            // console.log(sum(1,2));
+            //相当于
+            console.log(sum.call(obj,1,2));
+            console.log(sum.apply(obj,[1,2]));
+            //改变函数中的this指向问题，call\apply
+
+            // console.log(sum());
+
+
+
+        </script>
+	</body>
+</html>

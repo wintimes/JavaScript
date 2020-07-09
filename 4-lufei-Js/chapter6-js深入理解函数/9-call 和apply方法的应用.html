@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>9-call 和apply方法的应用</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+           /*
+           1.找出数组的最大元素
+           2.将类数组转换为真正的数组
+           3.数组追加
+           4.利用call 和 apply做继承
+           5.使用log代理console.log()
+           */
+        //1.找出数组的最大元素
+        var max = Math.max(2,3,4,5,10);
+        var arr = [2,1,10,19,88];
+        var arrMax = Math.max.apply(null,arr);
+        console.log(arrMax)
+        //2.将类数组转换成真正的数组
+        // function add(){
+        //     //arguments//类数组
+        //     console.log(arguments);
+        //     arguments.push(5); //复习push
+        //     //apply()  slice()
+        //     // var arr = [1,2,3,4,5];
+        //     // arr.slice(2); //复制内容到新的数组中 浅复制
+        //     //arr 不会改变
+        //     ///重点///Array.prototype.slice.apply(arguments);//得到的结果就是真的数组
+        //slice 相当于 copy 
+        //    // Array.prototype.slice.apply({0:'hello world',length:1});//得到的结果就是真的数组
+        //     console.log(arr);
+        // }
+        // add(1,2,3);
+
+        //3.数组追加
+        var arr = [];
+        Array.prototype.push.apply(arr,[1,2,3,4]);
+        //push 得到的结果是返回 一个长度值
+        Array.prototype.push.apply(arr,[8,9,0]);
+        console.log(arr);
+
+        //4.call 和apply 做继承
+        //动物包含了，人，狗
+        //动物类
+        function Animal(name,age){
+            //大写开头一般都是构造函数
+            this.name = name;
+            this.age = age;
+            this.sayAge = function(){
+                console.log(this.age);
+            }
+        }
+        //使用log代理console.log()
+        //Cat
+        function Cat(name,age){
+            //继承Animal
+            Animal.call(this,name,age);//this 指向了60行的c实例对象
+        }
+        var c = new Cat('xx',20);
+        c.sayAge();
+        console.log(c.name);
+
+        function Dog(){
+            Animal.apply(this,arguments)
+        }
+        var d = new Dog('yy',109)
+        console.log(d)
+
+        //使用log代理console.log()
+        function log(){
+            console.log.apply(console,arguments);
+        }
+        log(d);
+        </script>
+	</body>
+</html>
