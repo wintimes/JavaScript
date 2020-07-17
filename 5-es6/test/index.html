@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>1-es6</title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+        // let const  -> var
+        // console.log(a);
+        // var  a = 10;
+        let a = 10;
+        {
+            let a = 10;
+        }
+        const Name = '张三';
+        Name  = '李四';
+        const obj = {
+            name:'张三',
+        }
+        //冻结对象，深冻结（对象中的对象属性无法更改）
+       // 解构
+       let {name:myname} = obj;
+       console.log(myname);
+       //多层解构，调用
+       //展开运算符
+       let arr = [1,2,3];
+       let newArr = [...arr,4];
+       //  ... 1.展开数组或者对象 2. 类数组转换数组
+       //set map 怎么使用
+       let set = new Set([1,2,3])// 去重复
+       //箭头语法: 1.形式更加简单 2.this 问题
+       const test = function (){
+
+       }
+       const test = ()=>{
+
+       }
+        
+		</script>
+	</body>
+</html>
